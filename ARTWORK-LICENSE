@@ -22,10 +22,11 @@ https://creativecommons.org/publicdomain/zero/1.0/deed.es
 - previews/originals-contact-sheet.svg
 - previews/originals-contact-sheet.png
 - previews/theme-art-preview.svg
-- preview.png
+- previews/theme-art-preview.png
 
 Esta dedicación NO cubre los diez fondos descargados de terceros, sus
-fotografías ni la plancha de contacto combinada previews/contact-sheet.png.
+fotografías, la plancha combinada previews/contact-sheet.png ni las capturas
+reales preview.png, previews/halloween.webp y previews/desktop-mansion.png.
 Consultar SOURCES.md para el origen y los términos de esos recursos externos.
 El código de tools/render-wallpapers.py queda bajo la licencia general del
 repositorio (LICENSE); sus dos imágenes resultantes se publican bajo CC0.

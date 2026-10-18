@@ -37,5 +37,7 @@ No incorporan fotografías ni ilustraciones externas. Se generan con [`tools/ren
 
 ## Vistas previas
 
-- **`preview.png`**, `previews/theme-art-preview.svg` y `previews/originals-contact-sheet.*`: solo los dos originales y la paleta; CC0 según [`ARTWORK-LICENSE`](ARTWORK-LICENSE). Están rotulados como vistas artísticas, no como capturas reales.
+- **`previews/theme-art-preview.*` y `previews/originals-contact-sheet.*`**: solo los dos originales y la paleta; CC0 según [`ARTWORK-LICENSE`](ARTWORK-LICENSE). Están rotulados como vistas artísticas, no como capturas reales.
 - **`previews/contact-sheet.png`**: colección de los doce fondos, con miniaturas reducidas y rótulos identificadores. Cada imagen conserva **la licencia de su obra indicada arriba**; los rótulos y la disposición no relicencian las fotografías. Esta página proporciona atribución, enlaces y declaración de esos cambios de presentación. Mantén estos avisos al redistribuir la plancha.
+- **`preview.png` y `previews/halloween.webp`**: captura real con terminal, Neovim y el fondo **04 — Calabaza y farol**, de CC0-Photographers / PxHere, [fuente 774668](https://pxhere.com/en/photo/774668), [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). La captura se recortó de 1366 × 768 a 1360 × 765 para obtener 16:9 sin deformación; la versión WebP se redujo a 1200 × 675. No se añadieron ventanas ni efectos mediante montaje.
+- **`previews/desktop-mansion.png`**: segunda captura real con el fondo original **12 — La mansión del cuervo**, CC0. Mismo recorte mínimo 16:9. La aportación de las capturas se distribuye bajo MIT; el software y los fondos representados conservan sus derechos. Véase `LICENSE`.

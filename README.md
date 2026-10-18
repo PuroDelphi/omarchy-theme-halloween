@@ -2,7 +2,9 @@
 
 Tema oscuro de Halloween: naranja calabaza, amatista, marfil y verde de poción sobre superficies casi negras. **12 fondos: 10 imágenes descargadas con licencia redistribuible y 2 ilustraciones originales en 4K**; sin sonidos, servicios en segundo plano ni sustos automáticos.
 
-![Vista artística del tema; no es una captura de escritorio](preview.png)
+![Halloween en una sesión real de Omarchy: terminal, Neovim y fondo Calabaza y farol](preview.png)
+
+Captura real, sin montaje de ventanas ni datos privados. [Segunda captura con la mansión original](previews/desktop-mansion.png) · [WebP del catálogo, 1200 × 675](previews/halloween.webp).
 
 ## Diseño y colores
 
@@ -40,8 +42,8 @@ omarchy-theme-halloween/
 ├── icons.theme              # Yaru
 ├── backgrounds/             # 10 descargados + 2 originales PNG 4K
 ├── artwork/                 # Fuentes SVG de los 2 originales
-├── preview.png              # Vista artística, NO captura real
-├── previews/                # Plancha de contacto
+├── preview.png              # Captura real de escritorio, 16:9
+├── previews/                # Segunda captura, WebP, arte y planchas
 ├── tools/                   # Regeneración del arte
 ├── LICENSE                  # MIT: configuración, herramientas y documentación
 ├── ARTWORK-LICENSE          # CC0 1.0: solo arte original
@@ -54,7 +56,7 @@ Los doce archivos finales van en `backgrounds/`: no hay miniaturas ni fuentes SV
 
 ### Dos ilustraciones originales adicionales
 
-Los archivos **11** y **12** son creaciones procedurales propias del proyecto, no descargas ni recolores de fotografías. Sus fuentes SVG editables están en `artwork/` y sus PNG finales tienen **3840 × 2160 píxeles**. La plancha [`previews/originals-contact-sheet.png`](previews/originals-contact-sheet.png) muestra exclusivamente esas dos obras; `preview.png` es una presentación artística, no una captura real de escritorio.
+Los archivos **11** y **12** son creaciones procedurales propias del proyecto, no descargas ni recolores de fotografías. Sus fuentes SVG editables están en `artwork/` y sus PNG finales tienen **3840 × 2160 píxeles**. La plancha [`previews/originals-contact-sheet.png`](previews/originals-contact-sheet.png) muestra exclusivamente esas dos obras; [`previews/theme-art-preview.png`](previews/theme-art-preview.png) conserva su presentación artística separada de las capturas reales.
 
 - **11 — Campo de calabazas:** cosecha nocturna, luz de vela y siluetas de Halloween.
 - **12 — Mansión del cuervo:** arquitectura embrujada, ventanas cálidas y cielo amatista.
@@ -67,7 +69,7 @@ Los PNG ya están incluidos; esto es solo para desarrollar el arte. Requiere **P
 python tools/render-wallpapers.py
 ```
 
-El comando vuelve a generar únicamente los dos originales: sus fuentes SVG, los PNG 3840 × 2160 y sus vistas. No descarga, sustituye ni borra las diez fotografías. Para generar una escena a otra resolución en un directorio independiente:
+El comando vuelve a generar únicamente los dos originales: sus fuentes SVG, los PNG 3840 × 2160 y sus vistas artísticas en `previews/`. **No sobrescribe `preview.png` ni las capturas reales.** No descarga, sustituye ni borra las diez fotografías. Para generar una escena a otra resolución en un directorio independiente:
 
 ```bash
 python tools/render-wallpapers.py --scene 11 --width 1920 --height 1080 --output-dir /tmp/halloween-art
@@ -114,7 +116,7 @@ El repositorio solicitado se llama `omarchy-theme-halloween`: Omarchy elimina el
 
 1. Repositorio de distribución: **[PuroDelphi/omarchy-theme-halloween](https://github.com/PuroDelphi/omarchy-theme-halloween)**. La raíz contiene directamente la paleta y `backgrounds/`.
 2. Comprueba la instalación desde esa URL con **Install → Style → Theme** o el comando anterior. El identificador resultante debe ser `theme-halloween`.
-3. Comprueba el tema en un escritorio real y toma una captura representativa. `preview.png` es una vista artística identificada como tal, no evidencia de un escritorio real.
+3. `preview.png` contiene una captura real con terminal y Neovim; `previews/desktop-mansion.png` muestra una segunda escena. Se revisaron antes de publicar para evitar ventanas privadas, nombres de usuario, notificaciones y cursor de ratón.
 4. Propón su inclusión mediante un pull request al [repositorio del sitio de Omarchy](https://github.com/omacom/omarchy-site), siguiendo sus instrucciones vigentes.
 
 **Instalable ≠ aceptado en el catálogo ≠ incluido de serie.** El manual ofrece la vía del catálogo de temas comunitarios; no promete convertir una propuesta en tema oficial de la distribución. La aceptación depende de los mantenedores. Publicar en GitHub no supone haber enviado ni obtenido aprobación del catálogo.
@@ -129,7 +131,7 @@ Según [“Adding your theme” del sitio](https://github.com/omacom/omarchy-sit
 - La captura convertida a WebP en `assets/themes/halloween.webp`, objetivo **1200 × 675** y aproximadamente **menos de 100 KB**, sin ampliar una captura pequeña.
 - Un bloque `<figure class="themes__theme">` en **`themes/index.html`**, en orden alfabético. Imagen y título deben enlazar a `https://github.com/PuroDelphi/omarchy-theme-halloween`.
 
-El sitio genera sus datos desde ese HTML: no editar `src/data/themes.json` como fuente de la propuesta. Un PR sin captura no puede integrarse. La vista artística incluida aquí **no debe enviarse como captura real**.
+El sitio genera sus datos desde ese HTML: no editar `src/data/themes.json` como fuente de la propuesta. Un PR sin captura no puede integrarse. `previews/halloween.webp` es la captura real preparada para ese envío: **1200 × 675, 91.640 bytes**. La vista artística separada no debe confundirse con la captura.
 
 ### Marketplace: vía de registro separada
 
@@ -137,7 +139,7 @@ También existe [themes.omarchy.org](https://themes.omarchy.org), con [registro 
 
 El registro pide paleta y fondos en la raíz del tema y `preview.png` 16:9 de al menos 1000 píxeles de ancho. Rechaza enlaces simbólicos, imágenes mayores de 50 MB o 40 megapíxeles y repositorios mayores de 400 MB, entre otros errores. README, LICENSE y el topic `omarchy-theme` son recomendados. Un nombre de repositorio no convencional y herramientas de generación pueden producir **advertencias**, no necesariamente errores. El enlace local de la sección de instalación no forma parte del repositorio ni de su descarga.
 
-El registro puede asignar otro identificador si ya está ocupado. No se ha solicitado registro ni comprobado disponibilidad. Su instalación por nombre/commit validado pertenece a ese sistema; en la instalación local verificada se usa la **URL Git completa**, sin asumir que `omarchy theme install halloween` esté disponible.
+El registro puede asignar otro identificador si ya está ocupado. Su instalación por nombre/commit validado pertenece a ese sistema; en la instalación local verificada se usa la **URL Git completa**, sin asumir que `omarchy theme install halloween` esté disponible.
 
 ### Inclusión de serie
 
@@ -166,7 +168,7 @@ Cualquier extensión de sustos debería ser **opt-in**, tener una salida inmedia
 
 ## Verificación realizada
 
-Sobre **Omarchy 4.0.0.alpha**, sin cambiar el escritorio activo:
+Sobre **Omarchy 4.0.0.alpha**, primero en aislamiento y después en una sesión gráfica real:
 
 - Decodificación completa de los **12 fondos**, comprobación de dimensiones y ausencia de duplicados binarios: correcta.
 - **10 descargados** en su resolución de origen, entre 3264 y 6000 píxeles de ancho; **2 originales** a 3840 × 2160.
@@ -174,11 +176,13 @@ Sobre **Omarchy 4.0.0.alpha**, sin cambiar el escritorio activo:
 - Instalación real con `omarchy theme install` desde un repositorio Git temporal del contenido del proyecto, usando **HOME y rutas XDG aislados** y `OMARCHY_THEME_HEADLESS=1`: salida 0, identificador **`theme-halloween`**, los 12 fondos disponibles y enlace de fondo válido.
 - **19 configuraciones** generadas por las plantillas instaladas, sin variables sin resolver; salidas JSON/TOML analizadas correctamente.
 - `foot --check-config` sobre su configuración generada: salida **0**.
-- Revisión visual de los dos originales, de `preview.png` y de la plancha de los doce fondos.
+- Revisión visual de los dos originales, de la presentación artística y de la plancha de los doce fondos.
+- Instalación desde la URL pública y aplicación real en Hyprland: **Theme Halloween**, con el fondo **Calabaza y farol** activo; `hyprctl configerrors` sin errores.
+- Comprobación visual real de **Foot, Neovim, bordes y fondo**, con dos capturas de escritorio. No se han probado visualmente todas las demás aplicaciones.
+- Las capturas proceden del monitor nativo **1366 × 768**, con un recorte mínimo de 3 píxeles por lado y 1/2 píxeles arriba/abajo hasta **1360 × 765**, sin ampliación ni deformación. El WebP se redujo a **1200 × 675**.
+- Durante la aplicación y los cambios de fondo **no aparecieron sustos**. El tema no contiene una extensión, sonido ni temporizador que los implemente: esa función **no está incluida**.
 
-No se ha aplicado el tema a una sesión gráfica real ni probado visualmente cada aplicación. La vista artística **no sustituye la captura de escritorio necesaria para el PR del catálogo**.
-
-Los fondos suman **26,12 MiB**. Se mantienen los originales sin compresión adicional: esto supera ligeramente el umbral orientativo de advertencia de 25 MiB del registro, pero cada imagen cumple sus límites duros de 50 MB y 40 megapíxeles. No se ha ejecutado el validador remoto del marketplace ni solicitado aprobación.
+Los fondos suman **26,12 MiB**. Se mantienen los originales sin compresión adicional: esto supera ligeramente el umbral orientativo de advertencia de 25 MiB del registro, pero cada imagen cumple sus límites duros de 50 MB y 40 megapíxeles. Una solicitud comunitaria no supone aceptación ni inclusión de serie.
 
 
 ## Fuentes primarias

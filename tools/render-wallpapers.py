@@ -278,7 +278,7 @@ def make_previews(root, sources, renderer):
     parts += [text(80, 1045, 'DOS ORIGINALES CC0 1.0 · SVG EDITABLES · PNG 3840 × 2160', 18, '#B7A6BE', letter_spacing=2)]
     preview = directory / 'theme-art-preview.svg'
     preview.write_text(document(parts, 'Halloween — arte y paleta, no captura de escritorio'), encoding='utf-8')
-    render(renderer, preview, root / 'preview.png', 1920, 1080)
+    render(renderer, preview, directory / 'theme-art-preview.png', 1920, 1080)
 
 
 def render(renderer, source, destination, width, height):

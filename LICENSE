@@ -21,8 +21,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 The two original procedural wallpapers (numbered 11 and 12), their SVG sources,
-preview.png and previews/originals-contact-sheet.png are instead dedicated
-under CC0 1.0 Universal; see ARTWORK-LICENSE.
+previews/theme-art-preview.* and previews/originals-contact-sheet.* are instead
+dedicated under CC0 1.0 Universal; see ARTWORK-LICENSE.
 
 The ten downloaded wallpapers (numbered 01 through 10) and their thumbnails
 retain their individual third-party licenses. See SOURCES.md for attribution,
@@ -34,6 +34,17 @@ ORIGINAL ARTWORK DEDICATION
 The original artwork identified above is dedicated to the public domain under
 CC0 1.0 Universal, to the extent permitted by law, without warranty.
 Legal terms: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+DESKTOP SCREENSHOTS
+
+preview.png, previews/halloween.webp and previews/desktop-mansion.png are
+captures of a real Omarchy desktop, minimally cropped to 16:9 and, for the
+WebP catalog image, reduced to 1200x675. No desktop content is composited.
+The screenshot contribution is under this MIT license; depicted software
+retains its own rights. The shown wallpapers retain their source licenses:
+preview.png and previews/halloween.webp show photograph 04 (PxHere 774668,
+CC0 1.0); previews/desktop-mansion.png shows original wallpaper 12 (CC0 1.0).
+These screenshots are not covered by the separate original-art dedication.
 
 THIRD-PARTY PHOTOGRAPH ATTRIBUTIONS
 
