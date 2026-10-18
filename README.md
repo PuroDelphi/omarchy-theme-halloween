@@ -1,101 +1,101 @@
-# Halloween para Omarchy
+# Halloween for Omarchy
 
-Tema oscuro de Halloween: naranja calabaza, amatista, marfil y verde de poción sobre superficies casi negras. **14 fondos: 10 imágenes descargadas con licencia redistribuible, 2 ilustraciones vectoriales originales en 4K y 2 nuevas imágenes de terror de aspecto fotográfico generadas con IA a 2048 × 1152 nativos**; sin sonidos, servicios en segundo plano ni sustos automáticos.
+A dark Halloween theme: pumpkin orange, amethyst, ivory and potion green on near-black surfaces. **14 wallpapers: 10 downloaded images with redistributable licenses, 2 original 4K vector illustrations and 2 AI-generated, photographic-style horror images at their native 2048 × 1152 resolution.**
 
-![Halloween en una sesión real de Omarchy: terminal, Neovim y fondo Calabaza y farol](preview.png)
+![Halloween in a real Omarchy session: terminal, Neovim and Pumpkin and Lantern wallpaper](preview.png)
 
-Captura real, sin montaje de ventanas ni datos privados. [Segunda captura con la mansión original](previews/desktop-mansion.png) · [WebP del catálogo, 1200 × 675](previews/halloween.webp).
+An original screenshot from the initial static release, preserved without compositing or private data; its terminal shows that release's original twelve-wallpaper count. [Second screenshot featuring the original manor artwork](previews/desktop-mansion.png) · [Catalog WebP, 1200 × 675](previews/halloween.webp).
 
-## Diseño y colores
+## Design and colors
 
-`colors.toml` es la fuente de verdad. Omarchy genera las configuraciones de terminales, Hyprland, Neovim, Helix, btop, navegador, editores y shell a partir de sus plantillas. No hace falta mantener copias de esas configuraciones dentro del tema. Las aplicaciones instaladas y las plantillas locales determinan qué integraciones se aplican.
+`colors.toml` is the source of truth. Omarchy generates configurations for terminals, Hyprland, Neovim, Helix, btop, browsers, editors and the shell from its templates. There is no need to keep copies of those configurations inside the theme. Installed applications and local templates determine which integrations apply.
 
-| Papel | Color | Uso |
+| Role | Color | Use |
 | --- | --- | --- |
-| Noche | `#121016` | Fondo principal |
-| Vacío | `#08070C` | Superficie más profunda |
-| Berenjena | `#251D2D` | Superficies elevadas |
-| Calabaza | `#FF9A3C` | Acento, foco y acciones |
-| Amatista | `#BB9AF7` | Extremo del borde activo y violeta |
-| Marfil | `#F5E9D3` | Texto principal |
-| Hueso | `#FFF4DF` | Texto brillante y cursor generado |
-| Lavanda gris | `#9B8DA8` | Texto atenuado |
-| Ciruela | `#4B2E53` | Selección, con texto `#FFF4DF` |
-| Carmesí | `#FF667A` | Errores y alertas |
-| Poción | `#B5D66F` | Éxito y verde ANSI |
-| Vela | `#FFD166` | Advertencias y amarillo ANSI |
-| Luna azul | `#A5B4FC` | Azul ANSI |
-| Rosa espectral | `#ED96C3` | Magenta ANSI |
-| Ectoplasma | `#7ED6C4` | Cian ANSI |
+| Night | `#121016` | Main background |
+| Void | `#08070C` | Deepest surface |
+| Aubergine | `#251D2D` | Raised surfaces |
+| Pumpkin | `#FF9A3C` | Accent, focus and actions |
+| Amethyst | `#BB9AF7` | Active-border endpoint and purple |
+| Ivory | `#F5E9D3` | Main text |
+| Bone | `#FFF4DF` | Bright text and generated cursor |
+| Gray lavender | `#9B8DA8` | Muted text |
+| Plum | `#4B2E53` | Selection, with `#FFF4DF` text |
+| Crimson | `#FF667A` | Errors and alerts |
+| Potion | `#B5D66F` | Success and ANSI green |
+| Candle | `#FFD166` | Warnings and ANSI yellow |
+| Blue moon | `#A5B4FC` | ANSI blue |
+| Spectral pink | `#ED96C3` | ANSI magenta |
+| Ectoplasm | `#7ED6C4` | ANSI cyan |
 
-Borde activo: degradado calabaza → amatista a 45°. Borde inactivo: `#4B3A55`. El degradado es una declaración de color, no una animación. Los colores ANSI brillantes están definidos por separado. `icons.theme` selecciona **Yaru**, la variante naranja disponible de serie según el manual.
+Active border: pumpkin → amethyst gradient at 45°. Inactive border: `#4B3A55`. The gradient is a color declaration, not an animation. Bright ANSI colors are defined separately. `icons.theme` selects **Yaru**, the orange variant available by default according to the manual.
 
-Contrastes calculados con luminancia relativa sRGB (WCAG): texto/fondo **15,73:1**, atenuado/fondo **6,09:1**, acento/fondo **8,94:1**, selección **10,61:1**. Son relaciones entre colores sólidos: no certifican texto superpuesto a cualquier parte de una imagen ni todas las transparencias de las aplicaciones.
+Contrast ratios calculated using sRGB relative luminance (WCAG): text/background **15.73:1**, muted/background **6.09:1**, accent/background **8.94:1**, selection **10.61:1**. These compare solid colors: they do not certify text over every part of an image or every application's transparency settings.
 
-## Organización instalable
+## Installable layout
 
-La raíz del repositorio es la raíz del tema, sin una carpeta contenedora adicional:
+The repository root is the theme root, without an additional enclosing directory:
 
 ```text
 omarchy-theme-halloween/
-├── colors.toml              # Paleta semántica
+├── colors.toml              # Semantic palette
 ├── icons.theme              # Yaru
-├── backgrounds/             # 10 descargados + 2 vectoriales 4K + 2 imágenes IA 2K
-├── artwork/                 # Fuentes SVG de los originales vectoriales
-├── preview.png              # Captura real de escritorio, 16:9
-├── previews/                # Segunda captura, WebP, arte y planchas
-├── tools/                   # Regeneración del arte
-├── LICENSE                  # MIT: configuración, herramientas y documentación
-├── ARTWORK-LICENSE          # CC0 1.0: solo arte original
-├── SOURCES.md               # Autor, fuente y licencia de cada descarga
-├── sources/                 # Metadatos de procedencia
+├── backgrounds/             # 10 downloads + 2 4K vector illustrations + 2 2K AI images
+├── optional/                # Opt-in animated wallpaper; excluded from the default set
+├── artwork/                 # SVG sources for the original vector illustrations
+├── preview.png              # Real desktop screenshot, 16:9
+├── previews/                # Second screenshot, WebP, artwork and contact sheets
+├── tools/                   # Artwork regeneration
+├── LICENSE                  # MIT: configuration, tools and documentation
+├── ARTWORK-LICENSE          # CC0 1.0: original artwork only
+├── SOURCES.md               # Author, source and license for each download
+├── sources/                 # Provenance metadata
 └── README.md
 ```
 
-Los catorce archivos finales van en `backgrounds/`: no hay miniaturas ni fuentes mezcladas en el selector. Los descargados se conservan a su resolución de origen, sin ampliarlos artificialmente. Consulta [`SOURCES.md`](SOURCES.md) para sus títulos, autores, dimensiones y licencias, y [`previews/contact-sheet.png`](previews/contact-sheet.png) para verlos juntos.
+All fourteen final files are in `backgrounds/`: thumbnails and source files do not appear in the wallpaper selector. Downloads retain their source resolution, without artificial upscaling. See [`SOURCES.md`](SOURCES.md) for titles, authors, dimensions and licenses, and [`previews/contact-sheet.png`](previews/contact-sheet.png) to view the collection.
 
-### Dos ilustraciones vectoriales originales
+### Two original vector illustrations
 
-Los archivos **11** y **12** son creaciones procedurales propias del proyecto, no descargas ni recolores de fotografías. Sus fuentes SVG editables están en `artwork/` y sus PNG finales tienen **3840 × 2160 píxeles**. La plancha [`previews/originals-contact-sheet.png`](previews/originals-contact-sheet.png) muestra exclusivamente esas dos obras; [`previews/theme-art-preview.png`](previews/theme-art-preview.png) conserva su presentación artística separada de las capturas reales.
+Files **11** and **12** are the project's own procedural creations, not downloads or recolored photographs. Their editable SVG sources are in `artwork/`, and their final PNGs are **3840 × 2160 pixels**. [`previews/originals-contact-sheet.png`](previews/originals-contact-sheet.png) shows only these two works; [`previews/theme-art-preview.png`](previews/theme-art-preview.png) keeps their artistic presentation separate from the real screenshots.
 
-- **11 — Campo de calabazas:** cosecha nocturna, luz de vela y siluetas de Halloween.
-- **12 — Mansión del cuervo:** arquitectura embrujada, ventanas cálidas y cielo amatista.
+- **11 — Midnight Pumpkin Harvest:** a nighttime harvest, candlelight and Halloween silhouettes.
+- **12 — Raven Manor:** haunted architecture, warm windows and an amethyst sky.
 
-### Dos fondos adicionales de terror realista
+### Two additional realistic horror wallpapers
 
-Los fondos **13 y 14** abandonan la estética de caricatura: imágenes de **aspecto fotográfico generadas con FLUX.1 [schnell]**, con rostros inquietantes, humedad, deterioro y luces frías. Son escenas ficticias creadas para el tema: **no fotografías de personas reales** ni renderizaciones del generador SVG.
+Wallpapers **13 and 14** use a photographic rather than cartoon style. They were **generated with FLUX.1 [schnell]**, depicting unsettling faces, damp surfaces, decay and cold lighting. These are fictional scenes created for the theme: **not photographs of real people** or output from the SVG generator.
 
-- **[13 — El último pasillo](backgrounds/13-el-ultimo-pasillo.webp):** una presencia de mirada oscura y cabello húmedo en un pasillo abandonado, con luz fluorescente y reflejos en el suelo.
-- **[14 — No mires el cristal](backgrounds/14-no-mires-el-cristal.webp):** rostro amenazante junto a un cristal mojado y una mano en primer plano.
+- **[13 — The Last Corridor](backgrounds/13-the-last-corridor.webp):** a dark-eyed presence with wet hair in an abandoned corridor, with fluorescent lighting and floor reflections.
+- **[14 — Don't Look at the Glass](backgrounds/14-dont-look-at-the-glass.webp):** a threatening face beside wet glass, with a hand in the foreground.
 
-Ambos se incluyen en **WebP original, 2048 × 1152, 16:9**, sin ampliación artificial, retoque ni recomposición. Se priorizó el aspecto realista sobre entregar una imagen 4K inflada. Los doce fondos previos se conservan.
+Both are included as **original WebP files, 2048 × 1152, 16:9**, without artificial upscaling, retouching or recomposition. Realistic appearance took priority over an inflated 4K image. The previous twelve wallpapers remain included.
 
-![Los dos nuevos fondos de terror, generados con IA](previews/horror-contact-sheet.jpg)
+![The two additional AI-generated horror wallpapers](previews/horror-contact-sheet.jpg)
 
-Se generaron mediante el [Space público oficial de Black Forest Labs](https://huggingface.co/spaces/black-forest-labs/FLUX.1-schnell). Prompts completos, semillas, versión del modelo, parámetros y SHA-256 están en [`sources/13-14-generated.json`](sources/13-14-generated.json). No se necesita conexión, cuenta, generador ni modelo para instalar o usar los fondos incluidos.
+They were generated using the [official public Black Forest Labs Space](https://huggingface.co/spaces/black-forest-labs/FLUX.1-schnell). Full prompts, seeds, model version, parameters and SHA-256 hashes are in [`sources/13-14-generated.json`](sources/13-14-generated.json). Installing or using the included wallpapers requires no connection, account, generator or model.
 
-La licencia Apache-2.0 corresponde al **modelo**, no se presenta como una garantía de derechos exclusivos sobre sus salidas. La aportación del proyecto a estas imágenes se dedica a CC0 en la medida en que existan derechos; véase `ARTWORK-LICENSE`. Son fondos **estáticos**: el aspecto inquietante no implica apariciones, audio ni sustos temporizados.
+Apache-2.0 licenses the **model**; it is not presented as a guarantee of exclusive rights over its outputs. The project's contribution to these images is dedicated under CC0 to the extent rights exist; see `ARTWORK-LICENSE`.
 
-### Regenerar las ilustraciones vectoriales
+### Regenerating the vector illustrations
 
-Los PNG ya están incluidos; esto es solo para desarrollar el arte. Requiere **Python 3** y **`rsvg-convert`**, del paquete Arch `librsvg`. No necesita red ni paquetes Python adicionales.
+The PNGs are already included; this is only for artwork development. It requires **Python 3** and **`rsvg-convert`**, from Arch's `librsvg` package. No network access or additional Python packages are needed.
 
 ```bash
 python tools/render-wallpapers.py
 ```
 
-El comando vuelve a generar únicamente los dos originales **vectoriales 11 y 12**: sus fuentes SVG, los PNG 3840 × 2160 y sus vistas artísticas en `previews/`. **No sobrescribe `preview.png`, las capturas reales ni los fondos 13 y 14.** No descarga, sustituye ni borra las diez fotografías. Para generar una escena a otra resolución en un directorio independiente:
+The command regenerates only the two **vector originals, 11 and 12**: their SVG sources, 3840 × 2160 PNGs and artistic previews in `previews/`. **It does not overwrite `preview.png`, the real screenshots or wallpapers 13 and 14.** It does not download, replace or delete the ten photographs. To generate a scene at another resolution in a separate directory:
 
 ```bash
 python tools/render-wallpapers.py --scene 11 --width 1920 --height 1080 --output-dir /tmp/halloween-art
 ```
 
-`--sources-only` genera solo las fuentes; `--help` describe las opciones. Conserva los dos PNG originales a 4K al distribuir el tema. El escritorio ajusta la imagen recortándola para llenar cada monitor, por lo que otras proporciones pueden ocultar detalles de los bordes.
+`--sources-only` generates only the sources; `--help` describes the options. Keep the two original 4K PNGs when distributing the theme. The desktop crops the image to fill each monitor, so other aspect ratios may hide details near the edges.
 
+## Local installation
 
-## Instalación local
-
-Desde la raíz de este proyecto:
+From this project's root:
 
 ```bash
 mkdir -p "$HOME/.config/omarchy/themes"
@@ -103,121 +103,145 @@ ln -sT -- "$PWD" "$HOME/.config/omarchy/themes/theme-halloween"
 omarchy theme set theme-halloween
 ```
 
-Si ya existe `~/.config/omarchy/themes/theme-halloween`, `ln -sT` no lo sustituye: revisa ese destino antes de continuar. El enlace permite editar el proyecto y reaplicar el tema sin copiar archivos. **El último comando cambia el escritorio activo.** No se necesita `sudo`, modificar `/usr/share/omarchy/` ni reiniciar la sesión.
+If `~/.config/omarchy/themes/theme-halloween` already exists, `ln -sT` will not replace it: inspect that destination before continuing. The link lets you edit the project and reapply the theme without copying files. **The last command changes the active desktop.** No `sudo`, changes to `/usr/share/omarchy/` or session restart are needed.
 
-Para recorrer los doce fondos:
+To cycle through the fourteen wallpapers:
 
 ```bash
 omarchy theme bg next
 ```
 
-Para volver, consulta `omarchy theme list` y aplica el nombre de tu tema anterior con `omarchy theme set`. Instalar o crear este repositorio por sí solo no cambia tu escritorio.
+To switch back, consult `omarchy theme list` and apply your previous theme's name with `omarchy theme set`. Installing or creating this repository alone does not change your desktop.
 
-## Instalación desde GitHub
+## Installation from GitHub
 
 ```bash
 omarchy theme install https://github.com/PuroDelphi/omarchy-theme-halloween
 ```
 
-Este comando descarga **y aplica** el tema. Para seleccionarlo otra vez:
+This command downloads **and applies** the theme. To select it again:
 
 ```bash
 omarchy theme set theme-halloween
 ```
 
-El repositorio solicitado se llama `omarchy-theme-halloween`: Omarchy elimina el prefijo `omarchy-`, de modo que su identificador instalado es **`theme-halloween`**, no `halloween`. Se conserva el nombre del repositorio elegido por su propietario aunque difiera de la convención recomendada `omarchy-[nombre]-theme`.
+The requested repository is named `omarchy-theme-halloween`: Omarchy removes the `omarchy-` prefix, so its installed identifier is **`theme-halloween`**, not `halloween`. The owner's chosen repository name is retained, although it differs from the recommended `omarchy-[name]-theme` convention.
 
-## Distribución y aprobación
+## Optional animated edition
 
-1. Repositorio de distribución: **[PuroDelphi/omarchy-theme-halloween](https://github.com/PuroDelphi/omarchy-theme-halloween)**. La raíz contiene directamente la paleta y `backgrounds/`.
-2. Comprueba la instalación desde esa URL con **Install → Style → Theme** o el comando anterior. El identificador resultante debe ser `theme-halloween`.
-3. `preview.png` contiene una captura real con terminal y Neovim; `previews/desktop-mansion.png` muestra una segunda escena. Se revisaron antes de publicar para evitar ventanas privadas, nombres de usuario, notificaciones y cursor de ratón.
-4. Propuesta enviada al catálogo del sitio: **[omacom/omarchy-site#586](https://github.com/omacom/omarchy-site/pull/586)**, con la captura WebP y la entrada alfabética requeridas.
+The **default edition** contains the fourteen still wallpapers above. The **animated edition** adds [`optional/halloween-jumpscare.webm`](optional/halloween-jumpscare.webm), a **24-second, 1920 × 1080, 24 fps, silent** video: a still corridor, a sudden close-up at 10 seconds, a brief zoom and a two-second fade back. It loops when selected as a video wallpaper. It contains no audio track, strobing, executable installer, plugin, service or hook.
 
-**Instalable ≠ aceptado en el catálogo ≠ incluido de serie.** El manual ofrece la vía del catálogo de temas comunitarios; no promete convertir una propuesta en tema oficial de la distribución. La aceptación depende de los mantenedores. Publicar en GitHub no supone haber enviado ni obtenido aprobación del catálogo.
+**Compatibility requirement:** use an Omarchy release with native **OWE video wallpaper support**, as documented in the [official background manual](https://github.com/omacom/omarchy/blob/quattro/manual/39-backgrounds.md). The local **4.0.0.alpha build used for the desktop screenshots only supports still images**; it cannot play this edition. Do not enable the video on that build. Update through Omarchy's normal supported update process before using this option.
 
-El tema usa el formato semántico de la instalación de referencia **Omarchy 4.0.0.alpha**. No se garantiza compatibilidad con ediciones anteriores basadas en otros formatos de configuración.
+The video deliberately lives **outside `backgrounds/`**. Installing the theme does not enable it or add it to the wallpaper cycle. A marketplace install may omit `optional/` entirely; download the media explicitly using the instructions below.
 
-### Envíos comunitarios
+### Enable
 
-- **Catálogo del sitio:** [PR #586](https://github.com/omacom/omarchy-site/pull/586). La propuesta pasó localmente build, lint, tipos, **51 pruebas Node + 45 Python**, paridad estática y comprobación visual del catálogo en navegador. Estas comprobaciones locales no equivalen a checks remotos ni a aprobación de un mantenedor.
-- **Registro del marketplace:** [solicitud #128](https://github.com/omacom/omarchy-theme-registry/issues/128), con URL, nombre, confirmaciones de derechos/privacidad y capturas reales. La cuenta no tiene permiso para añadir la etiqueta `submission`; se solicitó al mantenedor que la aplique y active la validación. No se afirma que el validador remoto haya aprobado el tema.
-- Las dos propuestas se enviaron como **tema estático, sin sustos automáticos**. Consulta sus enlaces para conocer la decisión actual de los mantenedores; el envío no implica aparición inmediata en los catálogos.
+With a compatible Omarchy version and **Halloween installed and selected**, run:
 
+```bash
+video="$HOME/.config/omarchy/backgrounds/theme-halloween/halloween-jumpscare.webm"
+mkdir -p "$HOME/.config/omarchy/backgrounds/theme-halloween"
+curl --fail --location --output "$video" \
+  https://raw.githubusercontent.com/PuroDelphi/omarchy-theme-halloween/main/optional/halloween-jumpscare.webm &&
+  omarchy theme bg set "$video"
+```
 
-### Catálogo del sitio: requisitos concretos
+**The last command immediately selects the animated wallpaper.** After installation, it also appears in the normal background picker/cycle. The effect stays behind application windows; it is not an on-top popup. Omarchy may preserve the selected wallpaper across logins and also display its video on the lock screen, depending on the version. Video consumes more power than a still; consumption has not been measured here.
 
-Según [“Adding your theme” del sitio](https://github.com/omacom/omarchy-site#adding-your-theme), el PR debe incluir:
+### Disable and remove
 
-- Una **captura real 16:9** con terminal, editor y un fondo del tema; sin cursor, notificaciones ni información privada. Una ilustración o un escritorio vacío no sustituye esa captura.
-- La captura convertida a WebP en `assets/themes/halloween.webp`, objetivo **1200 × 675** y aproximadamente **menos de 100 KB**, sin ampliar una captura pequeña.
-- Un bloque `<figure class="themes__theme">` en **`themes/index.html`**, en orden alfabético. Imagen y título deben enlazar a `https://github.com/PuroDelphi/omarchy-theme-halloween`.
+Select a still first, then remove the optional file so that cycling backgrounds cannot select it again:
 
-El sitio genera sus datos desde ese HTML: no editar `src/data/themes.json` como fuente de la propuesta. Un PR sin captura no puede integrarse. `previews/halloween.webp` es la captura real preparada para ese envío: **1200 × 675, 91.640 bytes**. La vista artística separada no debe confundirse con la captura.
+```bash
+omarchy theme bg set \
+  "$HOME/.config/omarchy/themes/theme-halloween/backgrounds/04-pumpkin-and-lantern.jpg" &&
+  rm -f -- "$HOME/.config/omarchy/backgrounds/theme-halloween/halloween-jumpscare.webm"
+```
 
-### Marketplace: vía de registro separada
+The fourteen default wallpapers remain installed. No daemon, plugin, configuration entry or autostart needs removing.
 
-También existe [themes.omarchy.org](https://themes.omarchy.org), con [registro e instrucciones propios](https://github.com/omacom/omarchy-theme-registry). Su formulario [Submit a theme](https://github.com/omacom/omarchy-theme-registry/issues/new?template=submit-theme.yml) solicita la URL, permite indicar **Halloween** como nombre visible y exige confirmar autoría/permisos y ausencia de datos privados. El bot valida y propone un PR; la decisión final sigue correspondiendo a un mantenedor.
+### Listing policy
 
-El registro pide paleta y fondos en la raíz del tema y `preview.png` 16:9 de al menos 1000 píxeles de ancho. Rechaza enlaces simbólicos, imágenes mayores de 50 MB o 40 megapíxeles y repositorios mayores de 400 MB, entre otros errores. README, LICENSE y el topic `omarchy-theme` son recomendados. Un nombre de repositorio no convencional y herramientas de generación pueden producir **advertencias**, no necesariamente errores. El enlace local de la sección de instalación no forma parte del repositorio ni de su descarga.
+The [theme registry](https://github.com/omacom/omarchy-theme-registry#what-gets-checked) recognizes video backgrounds. Its [validator](https://github.com/omacom/omarchy-theme-registry/blob/master/packages/validator/src/validate.ts) issues a `BACKGROUND_VIDEO` resource warning for videos under `backgrounds/`, not an automatic rejection. This opt-in asset is outside that directory and needs no executable code. **Neither the manual nor the validator guarantees maintainer approval or inclusion among Omarchy's bundled themes.**
 
-El registro puede asignar otro identificador si ya está ocupado. Su instalación por nombre/commit validado pertenece a ese sistema; en la instalación local verificada se usa la **URL Git completa**, sin asumir que `omarchy theme install halloween` esté disponible.
-
-### Inclusión de serie
-
-Los temas integrados están en `themes/` del [proyecto Omarchy](https://github.com/omacom/omarchy). No se encontró una política específica que garantice aceptar un tema nuevo en ese conjunto. El proyecto dirige las sugerencias a [Discussions](https://github.com/omacom/omarchy/discussions), en lugar de usar issues de bugs para propuestas. La publicación y los catálogos comunitarios no equivalen a esa inclusión.
-
-
-### Lo que un tema descargado no debe necesitar
-
-En la versión consultada, un tema clonado con `omarchy theme install` no puede aportar Lua, configuraciones de terminal (`alacritty.toml`, `foot.ini`, `ghostty.conf`, `kitty.conf`) ni `vscode.json`: Omarchy los excluye del staging y los regenera desde la paleta. No se incluyen aquí. Tampoco hay instalador ejecutable, hooks de autoinicio o extensiones obligatorias.
-
-## Movimiento y sustos
-
-Un tema de colores no es un programa de efectos. El degradado de bordes y los fondos incluidos son estáticos. Las animaciones de ventanas y las transiciones de fondo que tenga configuradas el escritorio pertenecen al compositor y al shell, no a las ilustraciones de este repositorio.
-
-En **esta instalación 4.0.0.alpha**, el plugin de fondo usa nodos Qt Quick `Image` y una transición de revelado de **420 ms**. El selector enumera PNG, JPG/JPEG, GIF, BMP y WebP. Aceptar un GIF como archivo **no significa reproducir sus fotogramas**: el nodo `Image` es estático; Qt ofrece `AnimatedImage` para esa función. No hay un reproductor de vídeo en ese renderer ni MP4/WebM en sus filtros.
-
-Hay una diferencia de versiones importante: el [manual remoto de la rama `quattro`](https://github.com/omacom/omarchy/blob/quattro/manual/39-backgrounds.md) documenta fondos animados/vídeo y OWE. Eso no prueba que estén presentes en el código instalado aquí. Antes de añadir movimiento, hay que comprobar el renderer y la versión efectivos; no basta con cambiar la extensión de un fondo.
+Source hashes, the exact production command and qualified artwork rights are documented in [`sources/optional-jumpscare.json`](sources/optional-jumpscare.json), [`SOURCES.md`](SOURCES.md) and [`ARTWORK-LICENSE`](ARTWORK-LICENSE).
 
 
-Para introducir apariciones, sonido o temporizadores haría falta una extensión/automatización aparte, instalada de forma explícita. No debe ocultarse código en un tema ni intentar saltarse el filtrado del instalador. Un hook `theme-set` puede reaccionar a un cambio de tema, pero no convierte una imagen en animación ni se instala automáticamente desde este repositorio.
+## Distribution and approval
 
-La arquitectura disponible permite un plugin Quickshell de tipo **overlay**, con manifiesto y QML bajo `~/.config/omarchy/plugins/`, activado por separado. Puede animar opacidad/desplazamiento o mostrar `AnimatedImage`; es código de confianza del usuario, no una propiedad de `colors.toml`. Esta es una posibilidad técnica investigada, **no una extensión incluida o probada en este proyecto**. Vídeo/animación continua exige más recursos que una imagen fija; no se midió su consumo.
+1. Distribution repository: **[PuroDelphi/omarchy-theme-halloween](https://github.com/PuroDelphi/omarchy-theme-halloween)**. Its root directly contains the palette and `backgrounds/`.
+2. Check installation from that URL using **Install → Style → Theme** or the command above. The resulting identifier should be `theme-halloween`.
+3. `preview.png` contains a real screenshot with a terminal and Neovim; `previews/desktop-mansion.png` shows a second scene. They were reviewed before publication to exclude private windows, usernames, notifications and the mouse pointer.
+4. Website catalog submission: **[omacom/omarchy-site#586](https://github.com/omacom/omarchy-site/pull/586)**, with the required WebP screenshot and alphabetical entry.
 
+**Installable ≠ accepted into the catalog ≠ bundled by default.** The manual provides a community-theme catalog route; it does not promise to make a submission an official distribution theme. Acceptance is up to the maintainers. Publishing on GitHub does not itself mean a catalog submission has been made or approved.
 
-Cualquier extensión de sustos debería ser **opt-in**, tener una salida inmediata y desinstalación clara, evitar destellos/estrobos, permitir silenciarla, limitar recursos y no aparecer sobre bloqueo, autenticación o trabajo sensible. Este tema no implementa ni activa sustos.
+The theme uses the semantic format of the reference installation, **Omarchy 4.0.0.alpha**. Compatibility with earlier editions using other configuration formats is not guaranteed.
 
-## Verificación realizada
+### Community submissions
 
-Sobre **Omarchy 4.0.0.alpha**: la colección inicial se probó en sesión gráfica real; la ampliación a 14 fondos se verificó además con una instalación aislada.
+- **Website catalog:** [PR #586](https://github.com/omacom/omarchy-site/pull/586). The submission locally passed build, lint, type checks, **51 Node + 45 Python tests**, static parity and visual browser inspection of the catalog. These local checks are not remote checks or maintainer approval.
+- **Marketplace registry:** [submission #128](https://github.com/omacom/omarchy-theme-registry/issues/128), including the URL, name, rights/privacy confirmations and real screenshots. The account lacks permission to add the `submission` label; a maintainer was asked to apply it and trigger validation. No claim is made that the remote validator approved the theme.
+- Both submissions describe the theme's included content. Follow their links for the maintainers' current decisions; submission does not imply immediate catalog listing.
 
-- Decodificación completa de los **14 fondos**, comprobación de dimensiones y ausencia de duplicados binarios: correcta.
-- **10 descargados** en su resolución de origen, entre 3264 y 6000 píxeles de ancho; **2 ilustraciones vectoriales** a 3840 × 2160 y **2 imágenes de terror generadas con IA** a 2048 × 1152 nativos, sin reescalado. Los hashes de estas dos últimas coinciden con el registro de generación.
-- Ejecución real del generador para la escena 11 a **1920 × 1080** en un directorio temporal: correcta.
-- Instalación real con `omarchy theme install` desde un repositorio Git temporal del contenido del proyecto, usando **HOME y rutas XDG aislados** y `OMARCHY_THEME_HEADLESS=1`: salida 0, identificador **`theme-halloween`** y los **14 fondos disponibles**, incluidos los dos WebP nuevos intactos. No modificó el escritorio activo.
-- En la instalación inicial: **19 configuraciones** generadas por las plantillas instaladas, sin variables sin resolver; salidas JSON/TOML analizadas correctamente.
-- `foot --check-config` sobre su configuración generada: salida **0**.
-- Revisión visual de las dos ilustraciones vectoriales, de las dos imágenes de terror generadas con IA y de la plancha de los **catorce fondos**.
-- Instalación desde la URL pública y aplicación real en Hyprland: **Theme Halloween**, con el fondo **Calabaza y farol** activo; `hyprctl configerrors` sin errores.
-- Comprobación visual real de **Foot, Neovim, bordes y fondo**, con dos capturas de escritorio. No se han probado visualmente todas las demás aplicaciones.
-- Las capturas proceden del monitor nativo **1366 × 768**, con un recorte mínimo de 3 píxeles por lado y 1/2 píxeles arriba/abajo hasta **1360 × 765**, sin ampliación ni deformación. El WebP se redujo a **1200 × 675**.
-- Durante la aplicación y los cambios de fondo **no aparecieron sustos**. El tema no contiene una extensión, sonido ni temporizador que los implemente: esa función **no está incluida**.
+### Website catalog: specific requirements
 
-Los fondos suman **26,31 MiB**. Se mantienen los originales sin compresión adicional: esto supera ligeramente el umbral orientativo de advertencia de 25 MiB del registro, pero cada imagen cumple sus límites duros de 50 MB y 40 megapíxeles. Una solicitud comunitaria no supone aceptación ni inclusión de serie.
+According to the site's [“Adding your theme” instructions](https://github.com/omacom/omarchy-site#adding-your-theme), the PR must include:
 
+- A **real 16:9 screenshot** showing a terminal, editor and a theme wallpaper, without a cursor, notifications or private information. An illustration or empty desktop is not a substitute.
+- That screenshot converted to WebP at `assets/themes/halloween.webp`, targeting **1200 × 675** and approximately **under 100 KB**, without upscaling a small screenshot.
+- A `<figure class="themes__theme">` block in **`themes/index.html`**, in alphabetical order. Both image and title must link to `https://github.com/PuroDelphi/omarchy-theme-halloween`.
 
-## Fuentes primarias
+The site generates its data from that HTML: do not edit `src/data/themes.json` as the submission source. A PR without a screenshot cannot be merged. `previews/halloween.webp` is the real screenshot prepared for this submission: **1200 × 675, 91,640 bytes**. The separate artistic preview must not be confused with the screenshot.
 
-- [Manual: crear y distribuir un tema](https://omarchy.org/manual/making-your-own-theme/).
-- [Catálogo de temas comunitarios](https://omarchy.org/themes/).
-- [Repositorio de Omarchy](https://github.com/omacom/omarchy): comandos `omarchy-theme-install`, `omarchy-theme-set`, `omarchy-theme-set-templates` y `omarchy-theme-color`.
-- [Repositorio del sitio](https://github.com/omacom/omarchy-site): vía de contribución del catálogo. El manual puede conservar enlaces con un nombre antiguo de organización; el catálogo enlaza a `omacom`.
-- [Instrucciones exactas del catálogo](https://github.com/omacom/omarchy-site#adding-your-theme) y [registro del marketplace](https://github.com/omacom/omarchy-theme-registry).
-- [Qt Quick Image](https://doc.qt.io/qt-6/qml-qtquick-image.html#details): diferencia entre imágenes estáticas y animadas.
+### Marketplace: a separate registration route
 
-## Licencias y procedencia
+[themes.omarchy.org](https://themes.omarchy.org) also has its [own registry and instructions](https://github.com/omacom/omarchy-theme-registry). Its [Submit a theme](https://github.com/omacom/omarchy-theme-registry/issues/new?template=submit-theme.yml) form requests the URL, allows **Halloween** as the display name and requires confirmation of authorship/permissions and absence of private data. The bot validates and proposes a PR; the final decision remains with a maintainer.
 
-Configuración, herramientas y documentación: [MIT](LICENSE). Las **dos ilustraciones vectoriales**, sus fuentes SVG y sus vistas artísticas: [CC0 1.0 Universal](ARTWORK-LICENSE). Para las **dos imágenes generadas con IA**, la aportación del proyecto se dedica a CC0 únicamente en la medida en que existan derechos aplicables, sin promesa de exclusividad ni de protección autoral. Las **diez imágenes descargadas y sus miniaturas** conservan sus licencias y atribuciones individuales, documentadas en [SOURCES.md](SOURCES.md); **no se relicencian bajo MIT ni CC0**. La plancha conjunta es una colección de esas obras, no una renuncia a sus derechos. Instalar el tema no ejecuta generadores ni requiere sus dependencias.
+The registry requires the palette and wallpapers at the theme root and a 16:9 `preview.png` at least 1000 pixels wide. It rejects symbolic links, images larger than 50 MB or 40 megapixels, and repositories larger than 400 MB, among other errors. README, LICENSE and the `omarchy-theme` topic are recommended. An unconventional repository name and generation tools may produce **warnings**, not necessarily errors. The local installation symlink is not part of the repository or its download.
 
-Las atribuciones obligatorias, los enlaces de licencia y la dedicación de los originales también están incluidos en **`LICENSE`**, para que acompañen a los fondos incluso si un instalador selectivo no copia `SOURCES.md` o `ARTWORK-LICENSE`.
+The registry may assign a different identifier if the name is already taken. Installation by name/validated commit belongs to that system; the verified local installation uses the **full Git URL**, without assuming `omarchy theme install halloween` is available.
+
+### Bundling by default
+
+Bundled themes are in `themes/` in the [Omarchy project](https://github.com/omacom/omarchy). No specific policy was found guaranteeing acceptance of a new theme into that collection. The project directs suggestions to [Discussions](https://github.com/omacom/omarchy/discussions), rather than bug issues. Publication and community catalogs do not imply inclusion in the distribution.
+
+### What a downloaded theme should not need
+
+In the version consulted, a theme cloned with `omarchy theme install` cannot supply Lua, terminal configurations (`alacritty.toml`, `foot.ini`, `ghostty.conf`, `kitty.conf`) or `vscode.json`: Omarchy excludes them from staging and regenerates them from the palette. They are not included here. There is also no executable installer, autostart hook or mandatory extension.
+
+## Verification performed
+
+On **Omarchy 4.0.0.alpha**: the initial collection was tested in a real graphical session; the expansion to 14 wallpapers was additionally checked with an isolated installation.
+
+- Full decoding of all **14 wallpapers**, dimension checks and absence of binary duplicates: passed.
+- **10 downloads** at their source resolution, between 3264 and 6000 pixels wide; **2 vector illustrations** at 3840 × 2160 and **2 AI-generated horror images** at native 2048 × 1152, without upscaling. The last two images' hashes match the generation record.
+- Actual generator execution for scene 11 at **1920 × 1080** in a temporary directory: passed.
+- Actual installation with `omarchy theme install` from a temporary Git repository containing the project, using **isolated HOME and XDG paths** and `OMARCHY_THEME_HEADLESS=1`: exit 0, identifier **`theme-halloween`** and all **14 wallpapers available**, including both new WebPs intact. It did not change the active desktop.
+- During the initial installation: **19 configurations** generated by the installed templates, without unresolved variables; JSON/TOML outputs parsed successfully.
+- `foot --check-config` on its generated configuration: exit **0**.
+- Visual review of the two vector illustrations, the two AI-generated horror images and the **fourteen-wallpaper** contact sheet.
+- Installation from the public URL and actual application in Hyprland: **Theme Halloween**, with **Pumpkin and Lantern** active; `hyprctl configerrors` reported no errors.
+- Real visual inspection of **Foot, Neovim, borders and wallpaper**, with two desktop screenshots. Not all other applications have been visually tested.
+- Screenshots came from the native **1366 × 768** monitor, minimally cropped by 3 pixels on each side and 1/2 pixels at the top/bottom to **1360 × 765**, without upscaling or distortion. The WebP was reduced to **1200 × 675**.
+- English filename migration, local Markdown link targets and AI-image provenance hashes: checked. The translated renderer generated scene 11 successfully at 1920 × 1080.
+- Repeated the isolated Omarchy installation after the English cutover: **14 still wallpapers**, with no optional video in the default background cycle or selected as the active background.
+- Optional WebM: all **576 frames** decoded, **1920 × 1080 / 24 fps / 24 seconds**, one VP9 video stream and **no audio**. A complete FFplay playback run with SDL's dummy output exited successfully, and sampled frames were visually reviewed. Native OWE wallpaper playback was **not** tested on the older installed build.
+- Ran the official registry's `validateTheme` implementation locally against the final tree: **passed, zero errors**. It reported advisories for the unconventional repository name, palette keys unknown to that registry version, the 26.31 MiB still collection, and the existing development renderer. There was **no `BACKGROUND_VIDEO` warning**: the optional clip is outside `backgrounds/`. This local validation is not remote acceptance or maintainer approval.
+
+The wallpapers total **26.31 MiB**. Originals are retained without additional compression: this slightly exceeds the registry's advisory 25 MiB warning threshold, but every image meets its hard limits of 50 MB and 40 megapixels. A community submission does not imply acceptance or bundling by default.
+
+## Primary sources
+
+- [Manual: making and distributing a theme](https://omarchy.org/manual/making-your-own-theme/).
+- [Community theme catalog](https://omarchy.org/themes/).
+- [Omarchy repository](https://github.com/omacom/omarchy): `omarchy-theme-install`, `omarchy-theme-set`, `omarchy-theme-set-templates` and `omarchy-theme-color` commands.
+- [Website repository](https://github.com/omacom/omarchy-site): catalog contribution route. The manual may retain links using an older organization name; the catalog links to `omacom`.
+- [Exact catalog instructions](https://github.com/omacom/omarchy-site#adding-your-theme) and [marketplace registry](https://github.com/omacom/omarchy-theme-registry).
+
+## Licensing and provenance
+
+Configuration, tools and documentation: [MIT](LICENSE). The **two vector illustrations**, their SVG sources and artistic previews: [CC0 1.0 Universal](ARTWORK-LICENSE). For the **two AI-generated images**, the project's contribution is dedicated under CC0 only to the extent applicable rights exist, without any promise of exclusivity or copyright protection. The **ten downloaded images and their thumbnails** retain their individual licenses and attribution, documented in [SOURCES.md](SOURCES.md); **they are not relicensed under MIT or CC0**. The combined contact sheet is a collection of those works, not a waiver of their rights. Installing the theme does not run generators or require their dependencies.
+
+Required attribution, license links and the original-art dedication are also included in **`LICENSE`**, so they accompany the wallpapers even if a selective installer does not copy `SOURCES.md` or `ARTWORK-LICENSE`.

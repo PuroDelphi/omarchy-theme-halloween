@@ -26,8 +26,8 @@ PURPLE = '#BB9AF7'
 GREEN = '#B5D66F'
 CYAN = '#7ED6C4'
 SCENES = [
-    ('11', 'campo-de-calabazas', 'La cosecha de medianoche'),
-    ('12', 'mansion-del-cuervo', 'La mansión del cuervo'),
+    ('11', 'midnight-pumpkin-harvest', 'Midnight Pumpkin Harvest'),
+    ('12', 'raven-manor', 'Raven Manor'),
 ]
 
 
@@ -219,7 +219,7 @@ GENERATORS = [scene_11, scene_12]
 def document(parts, title, width=W, height=H):
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">'
             f'<title>{html.escape(title)}</title>'
-            '<desc>Ilustración procedural original Halloween. CC0 1.0. Sin recursos externos. No es una captura de escritorio.</desc>'
+            '<desc>Original procedural Halloween illustration. CC0 1.0. No external assets. Not a desktop screenshot.</desc>'
             + ''.join(parts) + '</svg>')
 
 
@@ -253,20 +253,20 @@ def make_previews(root, sources, renderer):
     directory = root / 'previews'
     directory.mkdir(parents=True, exist_ok=True)
     # Full-width illustrations preserve the detail of the two original scenes.
-    parts = [rect(0, 0, 1920, 2440, BG), text(60, 80, 'HALLOWEEN / DOS ORIGINALES', 36, GOLD, letter_spacing=5),
-             text(60, 128, 'Vista de arte · NO son capturas de escritorio · CC0 1.0', 22, '#B7A6BE')]
+    parts = [rect(0, 0, 1920, 2440, BG), text(60, 80, 'HALLOWEEN / TWO ORIGINALS', 36, GOLD, letter_spacing=5),
+             text(60, 128, 'Artwork preview · NOT desktop screenshots · CC0 1.0', 22, '#B7A6BE')]
     for i, ((number, slug, title), source) in enumerate(zip(SCENES, sources)):
         y = 175+i*1120
         parts += [inline_scene(source, 40, y, 1840, 1035), rect(40, y+1035, 1840, 50, '#211B29'),
                   text(60, y+1068, f'{number}  /  {title}', 24, CREAM)]
     contact = directory / 'originals-contact-sheet.svg'
-    contact.write_text(document(parts, 'Halloween — dos originales CC0', 1920, 2440), encoding='utf-8')
+    contact.write_text(document(parts, 'Halloween — two CC0 originals', 1920, 2440), encoding='utf-8')
     render(renderer, contact, directory / 'originals-contact-sheet.png', 1920, 2440)
     # Editorial art + palette, explicitly distinct from a desktop screenshot.
     parts = [rect(0, 0, 1920, 1080, BG),
              text(78, 87, 'HALLOWEEN', 58, GOLD, letter_spacing=10),
-             text(82, 137, 'DOS ILUSTRACIONES ORIGINALES / PALETA DEL TEMA', 21, CREAM, letter_spacing=3),
-             text(82, 178, 'Vista artística · NO es una captura de escritorio', 20, '#B7A6BE')]
+             text(82, 137, 'TWO ORIGINAL ILLUSTRATIONS / THEME PALETTE', 21, CREAM, letter_spacing=3),
+             text(82, 178, 'Artwork preview · NOT a desktop screenshot', 20, '#B7A6BE')]
     for i, source in enumerate(sources):
         x = 40+i*940
         parts += [inline_scene(source, x, 250, 900, 506.25),
@@ -275,9 +275,9 @@ def make_previews(root, sources, renderer):
     for i, color in enumerate(palette):
         x = 80+i*177
         parts += [rect(x, 910, 146, 54, color, rx=3, stroke='#69516C', stroke_width=1), text(x, 996, color, 18, '#CABBCB')]
-    parts += [text(80, 1045, 'DOS ORIGINALES CC0 1.0 · SVG EDITABLES · PNG 3840 × 2160', 18, '#B7A6BE', letter_spacing=2)]
+    parts += [text(80, 1045, 'TWO CC0 1.0 ORIGINALS · EDITABLE SVGs · PNG 3840 × 2160', 18, '#B7A6BE', letter_spacing=2)]
     preview = directory / 'theme-art-preview.svg'
-    preview.write_text(document(parts, 'Halloween — arte y paleta, no captura de escritorio'), encoding='utf-8')
+    preview.write_text(document(parts, 'Halloween — artwork and palette, not a desktop screenshot'), encoding='utf-8')
     render(renderer, preview, directory / 'theme-art-preview.png', 1920, 1080)
 
 
@@ -287,17 +287,17 @@ def render(renderer, source, destination, width, height):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument('--scene', choices=['all']+[s[0] for s in SCENES], default='all', help='Escena numerada; all también regenera las vistas previas')
+    parser.add_argument('--scene', choices=['all']+[s[0] for s in SCENES], default='all', help='Numbered scene; all also regenerates previews')
     parser.add_argument('--width', type=int, default=3840)
     parser.add_argument('--height', type=int, default=2160)
-    parser.add_argument('--sources-only', action='store_true', help='Escribir únicamente las dos fuentes SVG, sin rasterizar')
-    parser.add_argument('--output-dir', type=Path, default=Path(__file__).resolve().parents[1], help='Raíz de salida; por defecto, raíz del repositorio')
+    parser.add_argument('--sources-only', action='store_true', help='Write only the two SVG sources without rasterizing')
+    parser.add_argument('--output-dir', type=Path, default=Path(__file__).resolve().parents[1], help='Output root; defaults to the repository root')
     args = parser.parse_args()
     if args.width <= 0 or args.height <= 0:
-        parser.error('Las dimensiones deben ser positivas')
+        parser.error('Dimensions must be positive')
     renderer = None if args.sources_only else shutil.which('rsvg-convert')
     if not args.sources_only and renderer is None:
-        parser.error('Se necesita rsvg-convert (paquete librsvg); no se instala automáticamente')
+        parser.error('rsvg-convert is required (librsvg package); it is not installed automatically')
     root = args.output_dir.resolve()
     (root / 'artwork').mkdir(parents=True, exist_ok=True)
     if not args.sources_only:

@@ -1,0 +1,102 @@
+{
+  "filename": "optional/halloween-jumpscare.webm",
+  "title": "Halloween — Optional Animated Wallpaper",
+  "source_images": [
+    {
+      "filename": "backgrounds/13-the-last-corridor.webp",
+      "sha256": "8ceab2cb56659d3f782546cd3735d2f5230e2fef47782b496de3fe50a6038848"
+    },
+    {
+      "filename": "backgrounds/14-dont-look-at-the-glass.webp",
+      "sha256": "03d3c82c81a3be630105098dbd19a6567605d1ca805a35e75177b880687a21da"
+    }
+  ],
+  "duration_seconds": 24,
+  "width": 1920,
+  "height": 1080,
+  "frames_per_second": 24,
+  "audio": false,
+  "timeline": [
+    {
+      "start_seconds": 0,
+      "end_seconds": 10,
+      "content": "The Last Corridor, still"
+    },
+    {
+      "start_seconds": 10,
+      "end_seconds": 11.5,
+      "content": "Hard cut to Don't Look at the Glass with a slow centered zoom"
+    },
+    {
+      "start_seconds": 11.5,
+      "end_seconds": 13.5,
+      "content": "Two-second alpha fade back to the corridor"
+    },
+    {
+      "start_seconds": 13.5,
+      "end_seconds": 24,
+      "content": "The corridor, matching the first frame for looping"
+    }
+  ],
+  "producer": "FFmpeg",
+  "ffmpeg_version": "ffmpeg version n9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "production_command": [
+    "ffmpeg",
+    "-hide_banner",
+    "-loglevel",
+    "error",
+    "-nostdin",
+    "-y",
+    "-filter_complex_threads",
+    "1",
+    "-loop",
+    "1",
+    "-framerate",
+    "24",
+    "-i",
+    "backgrounds/13-the-last-corridor.webp",
+    "-loop",
+    "1",
+    "-framerate",
+    "24",
+    "-i",
+    "backgrounds/14-dont-look-at-the-glass.webp",
+    "-filter_complex",
+    "[0:v]scale=1920:1080,setsar=1,format=yuv420p[base];[1:v]scale=1920:1080,setsar=1,zoompan=z='1+0.0008*on':x='iw/2-iw/zoom/2':y='ih/2-ih/zoom/2':d=1:s=1920x1080:fps=24,trim=duration=3.5,setpts=PTS-STARTPTS,format=yuva420p,fade=t=out:st=1.5:d=2:alpha=1,setpts=PTS+10/TB[scare];[base][scare]overlay=eof_action=pass:repeatlast=0:format=auto:enable='between(t,10,13.5)',format=yuv420p[video]",
+    "-map",
+    "[video]",
+    "-an",
+    "-t",
+    "24",
+    "-r",
+    "24",
+    "-c:v",
+    "libvpx-vp9",
+    "-crf",
+    "30",
+    "-b:v",
+    "0",
+    "-deadline",
+    "good",
+    "-cpu-used",
+    "4",
+    "-row-mt",
+    "1",
+    "-threads",
+    "2",
+    "-tile-columns",
+    "1",
+    "-g",
+    "240",
+    "-pix_fmt",
+    "yuv420p",
+    "-map_metadata",
+    "-1",
+    "optional/halloween-jumpscare.webm"
+  ],
+  "sha256": "cb25c9115954909e715096d9febef85352a6c9740f27fd84193a564ec2cf4ea3",
+  "created_at_utc": "2026-10-18T20:07:41.346217+00:00",
+  "changes": "Sources downscaled from 2048x1152 to 1920x1080, composited, zoomed and encoded as VP9 WebM. Original WebP files remain unchanged.",
+  "output_rights": "The project contribution is dedicated to CC0 only to the extent applicable rights exist, with no promise of exclusivity or copyrightability. See ARTWORK-LICENSE.",
+  "activation": "Optional data asset outside backgrounds/. Not installed or enabled by a standard theme installation. Requires an Omarchy version with native OWE video wallpaper support."
+}

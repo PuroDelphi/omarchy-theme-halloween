@@ -1,7 +1,7 @@
 [
   {
-    "filename": "backgrounds/13-el-ultimo-pasillo.webp",
-    "title": "El último pasillo",
+    "filename": "backgrounds/13-the-last-corridor.webp",
+    "title": "The Last Corridor",
     "method": "AI-generated image; fictional scene, not a real photograph",
     "model": "black-forest-labs/FLUX.1-schnell",
     "model_revision": "741f7c3ce8b383c54771c7003378a50191e9efe9",
@@ -23,8 +23,8 @@
     "result_url_at_generation": "https://black-forest-labs-flux-1-schnell.hf.space/gradio_api/file=/tmp/gradio/8e4ecd63b2f1f964854a03dcc70e4e4d52a114268bc32c38fc0e0469803bde8c/image.webp"
   },
   {
-    "filename": "backgrounds/14-no-mires-el-cristal.webp",
-    "title": "No mires el cristal",
+    "filename": "backgrounds/14-dont-look-at-the-glass.webp",
+    "title": "Don't Look at the Glass",
     "method": "AI-generated image; fictional scene, not a real photograph",
     "model": "black-forest-labs/FLUX.1-schnell",
     "model_revision": "741f7c3ce8b383c54771c7003378a50191e9efe9",
