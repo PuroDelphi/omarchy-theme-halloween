@@ -1,6 +1,6 @@
 # Procedencia y licencias de los fondos
 
-**10 imágenes descargadas + 2 ilustraciones originales adicionales.** Los archivos 01–10 se redistribuyen con la licencia indicada por sus fuentes; no se presentan como creaciones de este proyecto. Los archivos 11 y 12 sí son originales procedurales del tema.
+**10 imágenes descargadas + 2 ilustraciones vectoriales originales + 2 nuevas imágenes generadas con IA.** Los archivos 01–10 se redistribuyen con la licencia indicada por sus fuentes; no se presentan como creaciones de este proyecto. Los archivos 11/12 son vectoriales originales; los 13/14 son escenas ficticias de terror generadas expresamente con FLUX.1 [schnell].
 
 Las fotografías descargadas se incluyen **sin modificaciones, a la resolución de origen y sin ampliación artificial**. El ajuste/recorte del escritorio no modifica el archivo distribuido. Los metadatos detallados, incluidos enlaces de descarga y avisos de licencia, se conservan en [`sources/01-05.json`](sources/01-05.json) y [`sources/06-10.json`](sources/06-10.json).
 
@@ -26,18 +26,21 @@ Las fotografías descargadas se incluyen **sin modificaciones, a la resolución 
 - **CC BY-SA 4.0 / 2.0:** atribuir a Famartin o Guillaume Baviere según corresponda, conservar fuente y enlace de licencia e indicar cambios. Si se distribuyen adaptaciones de esas fotografías, debe respetarse además **CompartirIgual** en los términos de la versión aplicable. No se añaden restricciones de uso a las obras licenciadas.
 - Los derechos de esas fotografías permanecen con sus respectivos autores salvo las renuncias CC0 declaradas por las fuentes. La licencia MIT del código y la dedicación CC0 de nuestras ilustraciones **no sustituyen sus licencias**.
 
-## Dos originales creados para el tema
+## Ilustraciones vectoriales y escenas generadas con IA
 
 | Archivo | Título | Resolución | Procedencia / licencia |
 | --- | --- | --- | --- |
 | [`11-campo-de-calabazas.png`](backgrounds/11-campo-de-calabazas.png) | **La cosecha de medianoche** | 3840 × 2160 | Arte vectorial procedural original del proyecto; [fuente SVG](artwork/11-campo-de-calabazas.svg) · [CC0 1.0](ARTWORK-LICENSE) |
 | [`12-mansion-del-cuervo.png`](backgrounds/12-mansion-del-cuervo.png) | **La mansión del cuervo** | 3840 × 2160 | Arte vectorial procedural original del proyecto; [fuente SVG](artwork/12-mansion-del-cuervo.svg) · [CC0 1.0](ARTWORK-LICENSE) |
+| [`13-el-ultimo-pasillo.webp`](backgrounds/13-el-ultimo-pasillo.webp) | **El último pasillo** | 2048 × 1152 nativos | Imagen generada con FLUX.1 [schnell]; [prompt, semilla y parámetros](sources/13-14-generated.json) · Aportación del proyecto bajo [CC0 en la medida aplicable](ARTWORK-LICENSE) |
+| [`14-no-mires-el-cristal.webp`](backgrounds/14-no-mires-el-cristal.webp) | **No mires el cristal** | 2048 × 1152 nativos | Imagen generada con FLUX.1 [schnell]; [prompt, semilla y parámetros](sources/13-14-generated.json) · Aportación del proyecto bajo [CC0 en la medida aplicable](ARTWORK-LICENSE) |
 
-No incorporan fotografías ni ilustraciones externas. Se generan con [`tools/render-wallpapers.py`](tools/render-wallpapers.py), usando geometría vectorial y pseudoaleatoriedad determinista. No son imágenes descargadas ni capturas de escritorio.
+Los **11 y 12** se generan con [`tools/render-wallpapers.py`](tools/render-wallpapers.py), usando geometría vectorial propia. Los **13 y 14** se generaron mediante el [Space oficial público de Black Forest Labs](https://huggingface.co/spaces/black-forest-labs/FLUX.1-schnell), con el modelo **FLUX.1 [schnell]**, cuya licencia [Apache-2.0 declara el productor](https://bfl.ai/blog/24-08-01-bfl). Se conservaron los bytes WebP recibidos, sin conversión, reescalado ni retoque. **No son fotografías reales ni capturas de escritorio**. La licencia del modelo no se confunde con derechos exclusivos sobre las salidas: solo se dedican a CC0 los derechos que puedan existir en la aportación del proyecto; no se garantiza exclusividad ni protección autoral de las imágenes generadas con IA.
 
 ## Vistas previas
 
-- **`previews/theme-art-preview.*` y `previews/originals-contact-sheet.*`**: solo los dos originales y la paleta; CC0 según [`ARTWORK-LICENSE`](ARTWORK-LICENSE). Están rotulados como vistas artísticas, no como capturas reales.
-- **`previews/contact-sheet.png`**: colección de los doce fondos, con miniaturas reducidas y rótulos identificadores. Cada imagen conserva **la licencia de su obra indicada arriba**; los rótulos y la disposición no relicencian las fotografías. Esta página proporciona atribución, enlaces y declaración de esos cambios de presentación. Mantén estos avisos al redistribuir la plancha.
+- **`previews/theme-art-preview.*` y `previews/originals-contact-sheet.*`**: solo las ilustraciones vectoriales **11 y 12** y la paleta; CC0 según [`ARTWORK-LICENSE`](ARTWORK-LICENSE). Están rotulados como vistas artísticas, no como capturas reales.
+- **`previews/contact-sheet.png`**: colección de los catorce fondos, con miniaturas reducidas y rótulos identificadores. Cada imagen conserva **la licencia de su obra indicada arriba**; los rótulos y la disposición no relicencian las fotografías. Esta página proporciona atribución, enlaces y declaración de esos cambios de presentación. Mantén estos avisos al redistribuir la plancha.
 - **`preview.png` y `previews/halloween.webp`**: captura real con terminal, Neovim y el fondo **04 — Calabaza y farol**, de CC0-Photographers / PxHere, [fuente 774668](https://pxhere.com/en/photo/774668), [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). La captura se recortó de 1366 × 768 a 1360 × 765 para obtener 16:9 sin deformación; la versión WebP se redujo a 1200 × 675. No se añadieron ventanas ni efectos mediante montaje.
 - **`previews/desktop-mansion.png`**: segunda captura real con el fondo original **12 — La mansión del cuervo**, CC0. Mismo recorte mínimo 16:9. La aportación de las capturas se distribuye bajo MIT; el software y los fondos representados conservan sus derechos. Véase `LICENSE`.
+- **`previews/horror-contact-sheet.jpg`**: presentación de las imágenes generadas con IA 13 y 14, reducidas para compararlas; misma dedicación de la aportación del proyecto que en `ARTWORK-LICENSE`. No es una captura de escritorio ni una fotografía real.

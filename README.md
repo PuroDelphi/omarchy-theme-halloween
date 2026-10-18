@@ -1,6 +1,6 @@
 # Halloween para Omarchy
 
-Tema oscuro de Halloween: naranja calabaza, amatista, marfil y verde de poción sobre superficies casi negras. **12 fondos: 10 imágenes descargadas con licencia redistribuible y 2 ilustraciones originales en 4K**; sin sonidos, servicios en segundo plano ni sustos automáticos.
+Tema oscuro de Halloween: naranja calabaza, amatista, marfil y verde de poción sobre superficies casi negras. **14 fondos: 10 imágenes descargadas con licencia redistribuible, 2 ilustraciones vectoriales originales en 4K y 2 nuevas imágenes de terror de aspecto fotográfico generadas con IA a 2048 × 1152 nativos**; sin sonidos, servicios en segundo plano ni sustos automáticos.
 
 ![Halloween en una sesión real de Omarchy: terminal, Neovim y fondo Calabaza y farol](preview.png)
 
@@ -40,8 +40,8 @@ La raíz del repositorio es la raíz del tema, sin una carpeta contenedora adici
 omarchy-theme-halloween/
 ├── colors.toml              # Paleta semántica
 ├── icons.theme              # Yaru
-├── backgrounds/             # 10 descargados + 2 originales PNG 4K
-├── artwork/                 # Fuentes SVG de los 2 originales
+├── backgrounds/             # 10 descargados + 2 vectoriales 4K + 2 imágenes IA 2K
+├── artwork/                 # Fuentes SVG de los originales vectoriales
 ├── preview.png              # Captura real de escritorio, 16:9
 ├── previews/                # Segunda captura, WebP, arte y planchas
 ├── tools/                   # Regeneración del arte
@@ -52,16 +52,31 @@ omarchy-theme-halloween/
 └── README.md
 ```
 
-Los doce archivos finales van en `backgrounds/`: no hay miniaturas ni fuentes SVG mezcladas en el selector. Los descargados se conservan a su resolución de origen, sin ampliarlos artificialmente. Consulta [`SOURCES.md`](SOURCES.md) para sus títulos, autores, dimensiones y licencias, y [`previews/contact-sheet.png`](previews/contact-sheet.png) para ver los doce juntos.
+Los catorce archivos finales van en `backgrounds/`: no hay miniaturas ni fuentes mezcladas en el selector. Los descargados se conservan a su resolución de origen, sin ampliarlos artificialmente. Consulta [`SOURCES.md`](SOURCES.md) para sus títulos, autores, dimensiones y licencias, y [`previews/contact-sheet.png`](previews/contact-sheet.png) para verlos juntos.
 
-### Dos ilustraciones originales adicionales
+### Dos ilustraciones vectoriales originales
 
 Los archivos **11** y **12** son creaciones procedurales propias del proyecto, no descargas ni recolores de fotografías. Sus fuentes SVG editables están en `artwork/` y sus PNG finales tienen **3840 × 2160 píxeles**. La plancha [`previews/originals-contact-sheet.png`](previews/originals-contact-sheet.png) muestra exclusivamente esas dos obras; [`previews/theme-art-preview.png`](previews/theme-art-preview.png) conserva su presentación artística separada de las capturas reales.
 
 - **11 — Campo de calabazas:** cosecha nocturna, luz de vela y siluetas de Halloween.
 - **12 — Mansión del cuervo:** arquitectura embrujada, ventanas cálidas y cielo amatista.
 
-### Regenerar las ilustraciones
+### Dos fondos adicionales de terror realista
+
+Los fondos **13 y 14** abandonan la estética de caricatura: imágenes de **aspecto fotográfico generadas con FLUX.1 [schnell]**, con rostros inquietantes, humedad, deterioro y luces frías. Son escenas ficticias creadas para el tema: **no fotografías de personas reales** ni renderizaciones del generador SVG.
+
+- **[13 — El último pasillo](backgrounds/13-el-ultimo-pasillo.webp):** una presencia de mirada oscura y cabello húmedo en un pasillo abandonado, con luz fluorescente y reflejos en el suelo.
+- **[14 — No mires el cristal](backgrounds/14-no-mires-el-cristal.webp):** rostro amenazante junto a un cristal mojado y una mano en primer plano.
+
+Ambos se incluyen en **WebP original, 2048 × 1152, 16:9**, sin ampliación artificial, retoque ni recomposición. Se priorizó el aspecto realista sobre entregar una imagen 4K inflada. Los doce fondos previos se conservan.
+
+![Los dos nuevos fondos de terror, generados con IA](previews/horror-contact-sheet.jpg)
+
+Se generaron mediante el [Space público oficial de Black Forest Labs](https://huggingface.co/spaces/black-forest-labs/FLUX.1-schnell). Prompts completos, semillas, versión del modelo, parámetros y SHA-256 están en [`sources/13-14-generated.json`](sources/13-14-generated.json). No se necesita conexión, cuenta, generador ni modelo para instalar o usar los fondos incluidos.
+
+La licencia Apache-2.0 corresponde al **modelo**, no se presenta como una garantía de derechos exclusivos sobre sus salidas. La aportación del proyecto a estas imágenes se dedica a CC0 en la medida en que existan derechos; véase `ARTWORK-LICENSE`. Son fondos **estáticos**: el aspecto inquietante no implica apariciones, audio ni sustos temporizados.
+
+### Regenerar las ilustraciones vectoriales
 
 Los PNG ya están incluidos; esto es solo para desarrollar el arte. Requiere **Python 3** y **`rsvg-convert`**, del paquete Arch `librsvg`. No necesita red ni paquetes Python adicionales.
 
@@ -69,7 +84,7 @@ Los PNG ya están incluidos; esto es solo para desarrollar el arte. Requiere **P
 python tools/render-wallpapers.py
 ```
 
-El comando vuelve a generar únicamente los dos originales: sus fuentes SVG, los PNG 3840 × 2160 y sus vistas artísticas en `previews/`. **No sobrescribe `preview.png` ni las capturas reales.** No descarga, sustituye ni borra las diez fotografías. Para generar una escena a otra resolución en un directorio independiente:
+El comando vuelve a generar únicamente los dos originales **vectoriales 11 y 12**: sus fuentes SVG, los PNG 3840 × 2160 y sus vistas artísticas en `previews/`. **No sobrescribe `preview.png`, las capturas reales ni los fondos 13 y 14.** No descarga, sustituye ni borra las diez fotografías. Para generar una escena a otra resolución en un directorio independiente:
 
 ```bash
 python tools/render-wallpapers.py --scene 11 --width 1920 --height 1080 --output-dir /tmp/halloween-art
@@ -175,21 +190,21 @@ Cualquier extensión de sustos debería ser **opt-in**, tener una salida inmedia
 
 ## Verificación realizada
 
-Sobre **Omarchy 4.0.0.alpha**, primero en aislamiento y después en una sesión gráfica real:
+Sobre **Omarchy 4.0.0.alpha**: la colección inicial se probó en sesión gráfica real; la ampliación a 14 fondos se verificó además con una instalación aislada.
 
-- Decodificación completa de los **12 fondos**, comprobación de dimensiones y ausencia de duplicados binarios: correcta.
-- **10 descargados** en su resolución de origen, entre 3264 y 6000 píxeles de ancho; **2 originales** a 3840 × 2160.
+- Decodificación completa de los **14 fondos**, comprobación de dimensiones y ausencia de duplicados binarios: correcta.
+- **10 descargados** en su resolución de origen, entre 3264 y 6000 píxeles de ancho; **2 ilustraciones vectoriales** a 3840 × 2160 y **2 imágenes de terror generadas con IA** a 2048 × 1152 nativos, sin reescalado. Los hashes de estas dos últimas coinciden con el registro de generación.
 - Ejecución real del generador para la escena 11 a **1920 × 1080** en un directorio temporal: correcta.
-- Instalación real con `omarchy theme install` desde un repositorio Git temporal del contenido del proyecto, usando **HOME y rutas XDG aislados** y `OMARCHY_THEME_HEADLESS=1`: salida 0, identificador **`theme-halloween`**, los 12 fondos disponibles y enlace de fondo válido.
-- **19 configuraciones** generadas por las plantillas instaladas, sin variables sin resolver; salidas JSON/TOML analizadas correctamente.
+- Instalación real con `omarchy theme install` desde un repositorio Git temporal del contenido del proyecto, usando **HOME y rutas XDG aislados** y `OMARCHY_THEME_HEADLESS=1`: salida 0, identificador **`theme-halloween`** y los **14 fondos disponibles**, incluidos los dos WebP nuevos intactos. No modificó el escritorio activo.
+- En la instalación inicial: **19 configuraciones** generadas por las plantillas instaladas, sin variables sin resolver; salidas JSON/TOML analizadas correctamente.
 - `foot --check-config` sobre su configuración generada: salida **0**.
-- Revisión visual de los dos originales, de la presentación artística y de la plancha de los doce fondos.
+- Revisión visual de las dos ilustraciones vectoriales, de las dos imágenes de terror generadas con IA y de la plancha de los **catorce fondos**.
 - Instalación desde la URL pública y aplicación real en Hyprland: **Theme Halloween**, con el fondo **Calabaza y farol** activo; `hyprctl configerrors` sin errores.
 - Comprobación visual real de **Foot, Neovim, bordes y fondo**, con dos capturas de escritorio. No se han probado visualmente todas las demás aplicaciones.
 - Las capturas proceden del monitor nativo **1366 × 768**, con un recorte mínimo de 3 píxeles por lado y 1/2 píxeles arriba/abajo hasta **1360 × 765**, sin ampliación ni deformación. El WebP se redujo a **1200 × 675**.
 - Durante la aplicación y los cambios de fondo **no aparecieron sustos**. El tema no contiene una extensión, sonido ni temporizador que los implemente: esa función **no está incluida**.
 
-Los fondos suman **26,12 MiB**. Se mantienen los originales sin compresión adicional: esto supera ligeramente el umbral orientativo de advertencia de 25 MiB del registro, pero cada imagen cumple sus límites duros de 50 MB y 40 megapíxeles. Una solicitud comunitaria no supone aceptación ni inclusión de serie.
+Los fondos suman **26,31 MiB**. Se mantienen los originales sin compresión adicional: esto supera ligeramente el umbral orientativo de advertencia de 25 MiB del registro, pero cada imagen cumple sus límites duros de 50 MB y 40 megapíxeles. Una solicitud comunitaria no supone aceptación ni inclusión de serie.
 
 
 ## Fuentes primarias
@@ -203,6 +218,6 @@ Los fondos suman **26,12 MiB**. Se mantienen los originales sin compresión adic
 
 ## Licencias y procedencia
 
-Configuración, herramientas y documentación: [MIT](LICENSE). Los **dos originales**, sus fuentes SVG y sus vistas artísticas: [CC0 1.0 Universal](ARTWORK-LICENSE). Las **diez imágenes descargadas y sus miniaturas** conservan sus licencias y atribuciones individuales, documentadas en [SOURCES.md](SOURCES.md); **no se relicencian bajo MIT ni CC0**. La plancha conjunta es una colección de esas obras, no una renuncia a sus derechos. Instalar el tema no ejecuta el generador ni requiere sus dependencias.
+Configuración, herramientas y documentación: [MIT](LICENSE). Las **dos ilustraciones vectoriales**, sus fuentes SVG y sus vistas artísticas: [CC0 1.0 Universal](ARTWORK-LICENSE). Para las **dos imágenes generadas con IA**, la aportación del proyecto se dedica a CC0 únicamente en la medida en que existan derechos aplicables, sin promesa de exclusividad ni de protección autoral. Las **diez imágenes descargadas y sus miniaturas** conservan sus licencias y atribuciones individuales, documentadas en [SOURCES.md](SOURCES.md); **no se relicencian bajo MIT ni CC0**. La plancha conjunta es una colección de esas obras, no una renuncia a sus derechos. Instalar el tema no ejecuta generadores ni requiere sus dependencias.
 
 Las atribuciones obligatorias, los enlaces de licencia y la dedicación de los originales también están incluidos en **`LICENSE`**, para que acompañen a los fondos incluso si un instalador selectivo no copia `SOURCES.md` o `ARTWORK-LICENSE`.

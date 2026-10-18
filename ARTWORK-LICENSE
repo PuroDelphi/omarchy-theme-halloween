@@ -1,10 +1,10 @@
-HALLOWEEN — DOS ILUSTRACIONES ORIGINALES / TWO ORIGINAL ILLUSTRATIONS
+HALLOWEEN — OBRAS VECTORIALES Y GENERADAS CON IA / VECTOR AND AI-GENERATED ARTWORK
 
 Dedicación al dominio público: CC0 1.0 Universal.
 SPDX-License-Identifier: CC0-1.0
 
 En la medida permitida por la ley, los autores dedican al dominio público
-los derechos de autor y derechos conexos de las DOS ilustraciones originales
+los derechos de autor y derechos conexos de las CUATRO obras originales
 identificadas abajo mediante CC0 1.0 Universal. Se permite copiar, modificar,
 distribuir y usar estas obras, incluso con fines comerciales, sin pedir
 permiso ni atribuir autoría. No se ofrece garantía alguna.
@@ -23,22 +23,34 @@ https://creativecommons.org/publicdomain/zero/1.0/deed.es
 - previews/originals-contact-sheet.png
 - previews/theme-art-preview.svg
 - previews/theme-art-preview.png
+- backgrounds/13-el-ultimo-pasillo.webp
+- backgrounds/14-no-mires-el-cristal.webp
+- previews/horror-contact-sheet.jpg
 
 Esta dedicación NO cubre los diez fondos descargados de terceros, sus
 fotografías, la plancha combinada previews/contact-sheet.png ni las capturas
 reales preview.png, previews/halloween.webp y previews/desktop-mansion.png.
 Consultar SOURCES.md para el origen y los términos de esos recursos externos.
-El código de tools/render-wallpapers.py queda bajo la licencia general del
-repositorio (LICENSE); sus dos imágenes resultantes se publican bajo CC0.
+El código de tools/render-wallpapers.py queda bajo la licencia MIT del
+repositorio (LICENSE); esta dedicación se refiere a las obras identificadas.
 
 ORIGEN Y ATRIBUCIÓN
-Arte procedural original creado expresamente para el tema Halloween en 2026
-mediante instrucciones vectoriales geométricas y pseudoaleatoriedad
-reproducible. Las dos ilustraciones originales no incorporan fotografías,
-imágenes, iconos, marcas de agua o ilustraciones externas. No requieren
-créditos a terceros. Las planchas de originales utilizan la fuente sans-serif
-del sistema para sus rótulos; no se redistribuye ningún archivo tipográfico.
-Los fondos originales no contienen tipografía ni recursos enlazados.
-No son capturas de escritorio. Atribución opcional:
-«Halloween — La cosecha de medianoche y La mansión del cuervo,
-arte original CC0 1.0».
+11/12: ilustraciones vectoriales originales creadas para el tema en 2026,
+sin fotografías ni recursos externos. Sus planchas usan la fuente sans-serif
+del sistema para los rótulos; no se redistribuye ningún archivo tipográfico.
+
+13/14: escenas ficticias generadas con FLUX.1 [schnell] mediante el Space
+público oficial de Black Forest Labs. No son fotografías de personas reales.
+Prompts, semillas, versiones y parámetros están en sources/13-14-generated.json.
+Los WebP de 2048x1152 son los originales del proveedor, sin ampliación,
+conversión, retoque ni recomposición. La plancha comparativa sí reduce su tamaño.
+
+El modelo FLUX.1 [schnell] se publica bajo Apache-2.0:
+https://bfl.ai/blog/24-08-01-bfl
+No se redistribuyen los pesos del modelo. Su licencia no constituye una
+garantía de exclusividad o de protección autoral de sus salidas. La dedicación
+CC0 de 13/14 se limita a los derechos que puedan existir en la aportación de
+los autores de este proyecto; no se atribuyen derechos de terceros.
+
+Las obras no son capturas de escritorio. Atribución opcional:
+«Halloween — arte vectorial original e imágenes generadas con IA».

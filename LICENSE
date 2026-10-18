@@ -20,9 +20,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-The two original procedural wallpapers (numbered 11 and 12), their SVG sources,
-previews/theme-art-preview.* and previews/originals-contact-sheet.* are instead
-dedicated under CC0 1.0 Universal; see ARTWORK-LICENSE.
+The original vector wallpapers 11/12, their SVG sources and art previews
+are dedicated under CC0 1.0 Universal. Wallpapers 13/14 are fictional
+AI-generated images created with FLUX.1 [schnell], not real photographs.
+To the extent rights exist in the project contribution to those images and
+previews/horror-contact-sheet.jpg, they are also dedicated under CC0.
+See ARTWORK-LICENSE for scope, provenance and the AI-output rights disclaimer.
+The vector generator remains under this MIT software license.
 
 The ten downloaded wallpapers (numbered 01 through 10) and their thumbnails
 retain their individual third-party licenses. See SOURCES.md for attribution,
@@ -34,6 +38,7 @@ ORIGINAL ARTWORK DEDICATION
 The original artwork identified above is dedicated to the public domain under
 CC0 1.0 Universal, to the extent permitted by law, without warranty.
 Legal terms: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
 
 DESKTOP SCREENSHOTS
 
