@@ -117,11 +117,18 @@ El repositorio solicitado se llama `omarchy-theme-halloween`: Omarchy elimina el
 1. Repositorio de distribución: **[PuroDelphi/omarchy-theme-halloween](https://github.com/PuroDelphi/omarchy-theme-halloween)**. La raíz contiene directamente la paleta y `backgrounds/`.
 2. Comprueba la instalación desde esa URL con **Install → Style → Theme** o el comando anterior. El identificador resultante debe ser `theme-halloween`.
 3. `preview.png` contiene una captura real con terminal y Neovim; `previews/desktop-mansion.png` muestra una segunda escena. Se revisaron antes de publicar para evitar ventanas privadas, nombres de usuario, notificaciones y cursor de ratón.
-4. Propón su inclusión mediante un pull request al [repositorio del sitio de Omarchy](https://github.com/omacom/omarchy-site), siguiendo sus instrucciones vigentes.
+4. Propuesta enviada al catálogo del sitio: **[omacom/omarchy-site#586](https://github.com/omacom/omarchy-site/pull/586)**, con la captura WebP y la entrada alfabética requeridas.
 
 **Instalable ≠ aceptado en el catálogo ≠ incluido de serie.** El manual ofrece la vía del catálogo de temas comunitarios; no promete convertir una propuesta en tema oficial de la distribución. La aceptación depende de los mantenedores. Publicar en GitHub no supone haber enviado ni obtenido aprobación del catálogo.
 
 El tema usa el formato semántico de la instalación de referencia **Omarchy 4.0.0.alpha**. No se garantiza compatibilidad con ediciones anteriores basadas en otros formatos de configuración.
+
+### Envíos comunitarios
+
+- **Catálogo del sitio:** [PR #586](https://github.com/omacom/omarchy-site/pull/586). La propuesta pasó localmente build, lint, tipos, **51 pruebas Node + 45 Python**, paridad estática y comprobación visual del catálogo en navegador. Estas comprobaciones locales no equivalen a checks remotos ni a aprobación de un mantenedor.
+- **Registro del marketplace:** [solicitud #128](https://github.com/omacom/omarchy-theme-registry/issues/128), con URL, nombre, confirmaciones de derechos/privacidad y capturas reales. La cuenta no tiene permiso para añadir la etiqueta `submission`; se solicitó al mantenedor que la aplique y active la validación. No se afirma que el validador remoto haya aprobado el tema.
+- Las dos propuestas se enviaron como **tema estático, sin sustos automáticos**. Consulta sus enlaces para conocer la decisión actual de los mantenedores; el envío no implica aparición inmediata en los catálogos.
+
 
 ### Catálogo del sitio: requisitos concretos
 
