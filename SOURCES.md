@@ -1,6 +1,6 @@
 # Wallpaper provenance and licenses
 
-**10 downloaded images + 2 original vector illustrations + 2 additional AI-generated images.** Files 01–10 are redistributed under the licenses stated by their sources; they are not presented as this project's creations. Files 11/12 are original vector illustrations; 13/14 are fictional horror scenes generated specifically with FLUX.1 [schnell].
+**14 still wallpapers = 10 licensed third-party downloads + 4 project-created works.** The four project-created wallpapers are **2 procedural vector illustrations (11–12)** and **2 FLUX-generated horror scenes (13–14)**. Files 01–10 retain their source licenses and are not presented as this project's creations. Preview images and the optional video are derivatives or presentations of these existing works, not additional independently created still wallpapers.
 
 Downloaded photographs are included **unmodified, at their source resolution and without artificial upscaling**. Desktop scaling/cropping does not change the distributed file. Detailed metadata, including download links and license notices, is retained in [`sources/01-05.json`](sources/01-05.json) and [`sources/06-10.json`](sources/06-10.json).
 
@@ -26,7 +26,7 @@ Downloaded photographs are included **unmodified, at their source resolution and
 - **CC BY-SA 4.0 / 2.0:** credit Famartin or Guillaume Baviere as appropriate, retain the source and license link, and indicate changes. Distributed adaptations of these photographs must also comply with **ShareAlike** under the applicable license version. No additional use restrictions are imposed on the licensed works.
 - Rights in these photographs remain with their respective authors, except for CC0 waivers declared by the sources. The code's MIT license and our illustrations' CC0 dedication **do not replace their licenses**.
 
-## Vector illustrations and AI-generated scenes
+## Four project-created wallpapers (11–14)
 
 | File | Title | Resolution | Provenance / license |
 | --- | --- | --- | --- |
@@ -39,7 +39,7 @@ Files **11 and 12** are generated with [`tools/render-wallpapers.py`](tools/rend
 
 ## Previews
 
-- **`previews/theme-art-preview.*` and `previews/originals-contact-sheet.*`**: only vector illustrations **11 and 12** and the palette; CC0 as described in [`ARTWORK-LICENSE`](ARTWORK-LICENSE). They are labeled as artistic previews, not real screenshots.
+- **`previews/theme-art-preview.*` and `previews/originals-contact-sheet.*`**: only the **two vector illustrations, 11–12**, and the palette, not all four project-created wallpapers. Their labels explicitly identify this vector-only scope. CC0 as described in [`ARTWORK-LICENSE`](ARTWORK-LICENSE); these are artwork previews, not real screenshots.
 - **`previews/contact-sheet.png`**: a collection of all fourteen wallpapers, with reduced thumbnails and identifying labels. Each image retains **its work's license stated above**; labels and layout do not relicense the photographs. This page provides attribution, links and a statement of those presentation changes. Retain these notices when redistributing the contact sheet.
 - **`preview.png` and `previews/halloween.webp`**: a refreshed real Omarchy **4.0.5-1** desktop capture with the orange transparent bar, Foot, Neovim and wallpaper **14 — Don't Look at the Glass**. The depicted wallpaper is fictional AI-generated artwork, not a real photograph; [generation provenance](sources/13-14-generated.json) and [qualified CC0 dedication](ARTWORK-LICENSE) apply to the project's contribution to it. The screenshot contribution is MIT; depicted software retains its own rights. The capture was cropped from **1366 × 768 to 1360 × 765** without distortion or upscaling; the WebP was reduced to **1200 × 675**, quality **80**, **50,808 bytes**. No windows or effects were composited. The scene was checked for private windows, usernames, notifications and the mouse pointer before publication.
 - **`previews/desktop-mansion.png`**: a second real screenshot with original wallpaper **12 — Raven Manor**, CC0. The same minimal 16:9 crop was applied. The screenshot contribution is distributed under MIT; depicted software and wallpapers retain their rights. See `LICENSE`.

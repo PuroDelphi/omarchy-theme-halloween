@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Original CC0 Halloween illustrations; standard library + rsvg-convert only.
+"""Two procedural vector Halloween illustrations (11/12), dedicated under CC0.
 
 Run: python tools/render-wallpapers.py
 Options: --scene 11, --width 3840 --height 2160, --sources-only.
-No network, external assets, fonts or changes to desktop configuration.
+No network or desktop configuration changes; no external artwork is downloaded.
+This tool does not generate the separate FLUX scenes 13/14.
 """
 from __future__ import annotations
 
@@ -252,20 +253,20 @@ def inline_scene(content, x, y, width, height):
 def make_previews(root, sources, renderer):
     directory = root / 'previews'
     directory.mkdir(parents=True, exist_ok=True)
-    # Full-width illustrations preserve the detail of the two original scenes.
-    parts = [rect(0, 0, 1920, 2440, BG), text(60, 80, 'HALLOWEEN / TWO ORIGINALS', 36, GOLD, letter_spacing=5),
+    # These previews cover the two vector scenes, not all four project-created wallpapers.
+    parts = [rect(0, 0, 1920, 2440, BG), text(60, 80, 'HALLOWEEN / TWO VECTOR ILLUSTRATIONS', 36, GOLD, letter_spacing=5),
              text(60, 128, 'Artwork preview · NOT desktop screenshots · CC0 1.0', 22, '#B7A6BE')]
     for i, ((number, slug, title), source) in enumerate(zip(SCENES, sources)):
         y = 175+i*1120
         parts += [inline_scene(source, 40, y, 1840, 1035), rect(40, y+1035, 1840, 50, '#211B29'),
                   text(60, y+1068, f'{number}  /  {title}', 24, CREAM)]
     contact = directory / 'originals-contact-sheet.svg'
-    contact.write_text(document(parts, 'Halloween — two CC0 originals', 1920, 2440), encoding='utf-8')
+    contact.write_text(document(parts, 'Halloween — two vector illustrations, CC0', 1920, 2440), encoding='utf-8')
     render(renderer, contact, directory / 'originals-contact-sheet.png', 1920, 2440)
     # Editorial art + palette, explicitly distinct from a desktop screenshot.
     parts = [rect(0, 0, 1920, 1080, BG),
              text(78, 87, 'HALLOWEEN', 58, GOLD, letter_spacing=10),
-             text(82, 137, 'TWO ORIGINAL ILLUSTRATIONS / THEME PALETTE', 21, CREAM, letter_spacing=3),
+             text(82, 137, 'TWO VECTOR ILLUSTRATIONS / THEME PALETTE', 21, CREAM, letter_spacing=3),
              text(82, 178, 'Artwork preview · NOT a desktop screenshot', 20, '#B7A6BE')]
     for i, source in enumerate(sources):
         x = 40+i*940
@@ -275,7 +276,7 @@ def make_previews(root, sources, renderer):
     for i, color in enumerate(palette):
         x = 80+i*177
         parts += [rect(x, 910, 146, 54, color, rx=3, stroke='#69516C', stroke_width=1), text(x, 996, color, 18, '#CABBCB')]
-    parts += [text(80, 1045, 'TWO CC0 1.0 ORIGINALS · EDITABLE SVGs · PNG 3840 × 2160', 18, '#B7A6BE', letter_spacing=2)]
+    parts += [text(80, 1045, 'TWO VECTOR WORKS · CC0 1.0 · SVG SOURCES · PNG 3840 × 2160', 18, '#B7A6BE', letter_spacing=2)]
     preview = directory / 'theme-art-preview.svg'
     preview.write_text(document(parts, 'Halloween — artwork and palette, not a desktop screenshot'), encoding='utf-8')
     render(renderer, preview, directory / 'theme-art-preview.png', 1920, 1080)

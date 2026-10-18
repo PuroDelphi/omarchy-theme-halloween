@@ -1,6 +1,6 @@
 # Halloween for Omarchy
 
-A dark Halloween theme: pumpkin orange, amethyst, ivory and potion green on near-black surfaces. **14 wallpapers: 10 downloaded images with redistributable licenses, 2 original 4K vector illustrations and 2 AI-generated, photographic-style horror images at their native 2048 × 1152 resolution.**
+A dark Halloween theme: pumpkin orange, amethyst, ivory and potion green on near-black surfaces. **14 still wallpapers: 10 licensed third-party downloads + 4 wallpapers created for this project**. The four project-created wallpapers are **2 procedural vector illustrations at 4K (11–12)** and **2 FLUX-generated photographic-style horror scenes at native 2048 × 1152 (13–14)**.
 
 ![Updated Halloween desktop: orange bar, Foot, Neovim and Don't Look at the Glass wallpaper](preview.png)
 
@@ -50,9 +50,9 @@ omarchy-theme-halloween/
 ├── artwork/                 # SVG sources for the original vector illustrations
 ├── preview.png              # Real desktop screenshot, 16:9
 ├── previews/                # Second screenshot, WebP, artwork and contact sheets
-├── tools/                   # Artwork regeneration
+├── tools/                   # Regeneration of the two vector illustrations
 ├── LICENSE                  # MIT: configuration, tools and documentation
-├── ARTWORK-LICENSE          # CC0 1.0: original artwork only
+├── ARTWORK-LICENSE          # CC0 dedication: four project-created works and listed derivatives
 ├── SOURCES.md               # Author, source and license for each download
 ├── sources/                 # Provenance metadata
 └── README.md
@@ -60,21 +60,25 @@ omarchy-theme-halloween/
 
 All fourteen final files are in `backgrounds/`: thumbnails and source files do not appear in the wallpaper selector. Downloads retain their source resolution, without artificial upscaling. See [`SOURCES.md`](SOURCES.md) for titles, authors, dimensions and licenses, and [`previews/contact-sheet.png`](previews/contact-sheet.png) to view the collection.
 
-### Two original vector illustrations
+## Four project-created wallpapers (11–14)
+
+The project-created collection contains **four still wallpapers**, grouped by how they were made. The ten downloaded photographs are separate and retain their own licenses.
+
+### Vector illustrations (11–12)
 
 Files **11** and **12** are the project's own procedural creations, not downloads or recolored photographs. Their editable SVG sources are in `artwork/`, and their final PNGs are **3840 × 2160 pixels**. [`previews/originals-contact-sheet.png`](previews/originals-contact-sheet.png) shows only these two works; [`previews/theme-art-preview.png`](previews/theme-art-preview.png) keeps their artistic presentation separate from the real screenshots.
 
 - **11 — Midnight Pumpkin Harvest:** a nighttime harvest, candlelight and Halloween silhouettes.
 - **12 — Raven Manor:** haunted architecture, warm windows and an amethyst sky.
 
-### Two additional realistic horror wallpapers
+### FLUX-generated horror scenes (13–14)
 
 Wallpapers **13 and 14** use a photographic rather than cartoon style. They were **generated with FLUX.1 [schnell]**, depicting unsettling faces, damp surfaces, decay and cold lighting. These are fictional scenes created for the theme: **not photographs of real people** or output from the SVG generator.
 
 - **[13 — The Last Corridor](backgrounds/13-the-last-corridor.webp):** a dark-eyed presence with wet hair in an abandoned corridor, with fluorescent lighting and floor reflections.
 - **[14 — Don't Look at the Glass](backgrounds/14-dont-look-at-the-glass.webp):** a threatening face beside wet glass, with a hand in the foreground.
 
-Both are included as **original WebP files, 2048 × 1152, 16:9**, without artificial upscaling, retouching or recomposition. Realistic appearance took priority over an inflated 4K image. The previous twelve wallpapers remain included.
+Both FLUX-generated scenes are included as **original WebP files, 2048 × 1152, 16:9**, without artificial upscaling, retouching or recomposition. Together with the two vector illustrations, they make up the **four project-created wallpapers**; all ten downloaded photographs remain included.
 
 ![The two additional AI-generated horror wallpapers](previews/horror-contact-sheet.jpg)
 
@@ -248,6 +252,14 @@ The wallpapers total **26.31 MiB**. Originals are retained without additional co
 
 ## Licensing and provenance
 
-Configuration, tools and documentation: [MIT](LICENSE). The **two vector illustrations**, their SVG sources and artistic previews: [CC0 1.0 Universal](ARTWORK-LICENSE). For the **two AI-generated images**, the project's contribution is dedicated under CC0 only to the extent applicable rights exist, without any promise of exclusivity or copyright protection. The **ten downloaded images and their thumbnails** retain their individual licenses and attribution, documented in [SOURCES.md](SOURCES.md); **they are not relicensed under MIT or CC0**. The combined contact sheet is a collection of those works, not a waiver of their rights. Installing the theme does not run generators or require their dependencies.
+The **14 still wallpapers** consist of **10 third-party downloads and 4 project-created works (11–14)**. The four project-created works are grouped below by provenance and licensing:
 
-Required attribution, license links and the original-art dedication are also included in **`LICENSE`**, so they accompany the wallpapers even if a selective installer does not copy `SOURCES.md` or `ARTWORK-LICENSE`.
+| Group | Files | License / dedication |
+| --- | --- | --- |
+| 2 procedural vector illustrations | 11–12, their SVG sources and vector previews | [CC0 1.0 Universal](ARTWORK-LICENSE) |
+| 2 FLUX-generated horror scenes | 13–14 and their comparison preview | Project contribution dedicated under [CC0 only to the extent applicable rights exist](ARTWORK-LICENSE), without a promise of exclusivity or copyright protection |
+| 10 downloaded photographs | 01–10 and their thumbnails | Their individual source licenses and attribution in [SOURCES.md](SOURCES.md); **not relicensed by the project** |
+
+Configuration, tools and documentation use [MIT](LICENSE). The optional video is a **derivative of scenes 13–14**, not a fifth independently created still wallpaper; the same qualified dedication applies to the project's contribution to it. Contact sheets are presentations of existing works, not additional wallpapers or waivers of the depicted works' rights. Installing the theme does not run generators or require their dependencies.
+
+Required attribution, license links and the dedication of the four project-created works are also included in **`LICENSE`**, so they accompany the wallpapers even if a selective installer does not copy `SOURCES.md` or `ARTWORK-LICENSE`.
