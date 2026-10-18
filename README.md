@@ -8,14 +8,14 @@ An original screenshot from the initial static release, preserved without compos
 
 ## Design and colors
 
-`colors.toml` is the source of truth. Omarchy generates configurations for terminals, Hyprland, Neovim, Helix, btop, browsers, editors and the shell from its templates. There is no need to keep copies of those configurations inside the theme. Installed applications and local templates determine which integrations apply.
+`colors.toml` is the source of truth for the application palette. Omarchy generates configurations for terminals, Hyprland, Neovim, Helix, btop, browsers, editors and the shell from its templates. `shell.bar.toml` overrides only the bar's text color; the other shell surfaces keep their generated colors. Installed applications and local templates determine which integrations apply.
 
 | Role | Color | Use |
 | --- | --- | --- |
 | Night | `#121016` | Main background |
 | Void | `#08070C` | Deepest surface |
 | Aubergine | `#251D2D` | Raised surfaces |
-| Pumpkin | `#FF9A3C` | Accent, focus and actions |
+| Pumpkin | `#FF9A3C` | Bar text, accent, focus and actions |
 | Amethyst | `#BB9AF7` | Active-border endpoint and purple |
 | Ivory | `#F5E9D3` | Main text |
 | Bone | `#FFF4DF` | Bright text and generated cursor |
@@ -30,6 +30,10 @@ An original screenshot from the initial static release, preserved without compos
 
 Active border: pumpkin → amethyst gradient at 45°. Inactive border: `#4B3A55`. The gradient is a color declaration, not an animation. Bright ANSI colors are defined separately. `icons.theme` selects **Yaru**, the orange variant available by default according to the manual.
 
+The clock and theme-aware monochrome bar icons use **pumpkin orange `#FF9A3C`** through the native `shell.bar.toml` section override. Application and popup text remains ivory; full-color application/tray icons retain their own artwork.
+
+The normal transparency toggle is preserved. In transparent mode, **Omarchy's automatic contrast adjustment can replace orange with a dark color** when the sampled wallpaper strip is bright, including **The Last Corridor**. This theme does not disable that adjustment or force the bar to stay transparent. Orange is the base color, not a fixed-color guarantee over every wallpaper or window.
+
 Contrast ratios calculated using sRGB relative luminance (WCAG): text/background **15.73:1**, muted/background **6.09:1**, accent/background **8.94:1**, selection **10.61:1**. These compare solid colors: they do not certify text over every part of an image or every application's transparency settings.
 
 ## Installable layout
@@ -40,6 +44,7 @@ The repository root is the theme root, without an additional enclosing directory
 omarchy-theme-halloween/
 ├── colors.toml              # Semantic palette
 ├── icons.theme              # Yaru
+├── shell.bar.toml           # Pumpkin-orange bar text; native contrast behavior retained
 ├── backgrounds/             # 10 downloads + 2 4K vector illustrations + 2 2K AI images
 ├── optional/                # Opt-in animated wallpaper; excluded from the default set
 ├── artwork/                 # SVG sources for the original vector illustrations
@@ -131,7 +136,7 @@ The requested repository is named `omarchy-theme-halloween`: Omarchy removes the
 
 The **default edition** contains the fourteen still wallpapers above. The **animated edition** adds [`optional/halloween-jumpscare.webm`](optional/halloween-jumpscare.webm), a **24-second, 1920 × 1080, 24 fps, silent** video: a still corridor, a sudden close-up at 10 seconds, a brief zoom and a two-second fade back. It loops when selected as a video wallpaper. It contains no audio track, strobing, executable installer, plugin, service or hook.
 
-**Compatibility requirement:** use an Omarchy release with native **OWE video wallpaper support**, as documented in the [official background manual](https://github.com/omacom/omarchy/blob/quattro/manual/39-backgrounds.md). The local **4.0.0.alpha build used for the desktop screenshots only supports still images**; it cannot play this edition. Do not enable the video on that build. Update through Omarchy's normal supported update process before using this option.
+**Compatibility requirement:** use an Omarchy release with native **OWE video wallpaper support**, as documented in the [official background manual](https://github.com/omacom/omarchy/blob/quattro/manual/39-backgrounds.md). As checked on 2026-10-18, the reference machine runs stable **4.0.5-1**, which cannot play this edition. Native video support is merged into development under the [4.5 milestone](https://github.com/omacom/omarchy/pull/6792), not the current stable release. Wait for a supported release containing that feature before enabling the video; changing to an experimental channel is not required for the static theme.
 
 The video deliberately lives **outside `backgrounds/`**. Installing the theme does not enable it or add it to the wallpaper cycle. A marketplace install may omit `optional/` entirely; download the media explicitly using the instructions below.
 
@@ -177,7 +182,7 @@ Source hashes, the exact production command and qualified artwork rights are doc
 
 **Installable ≠ accepted into the catalog ≠ bundled by default.** The manual provides a community-theme catalog route; it does not promise to make a submission an official distribution theme. Acceptance is up to the maintainers. Publishing on GitHub does not itself mean a catalog submission has been made or approved.
 
-The theme uses the semantic format of the reference installation, **Omarchy 4.0.0.alpha**. Compatibility with earlier editions using other configuration formats is not guaranteed.
+The theme uses the semantic format of the reference installation, **Omarchy 4.0.5-1**. Compatibility with earlier editions using other configuration formats is not guaranteed.
 
 ### Community submissions
 
@@ -213,7 +218,7 @@ In the version consulted, a theme cloned with `omarchy theme install` cannot sup
 
 ## Verification performed
 
-On **Omarchy 4.0.0.alpha**: the initial collection was tested in a real graphical session; the expansion to 14 wallpapers was additionally checked with an isolated installation.
+Reference environment: **Omarchy 4.0.5-1**, as reported by the installed package. The initial collection was tested in a real graphical session; the expansion to 14 wallpapers was additionally checked with an isolated installation.
 
 - Full decoding of all **14 wallpapers**, dimension checks and absence of binary duplicates: passed.
 - **10 downloads** at their source resolution, between 3264 and 6000 pixels wide; **2 vector illustrations** at 3840 × 2160 and **2 AI-generated horror images** at native 2048 × 1152, without upscaling. The last two images' hashes match the generation record.
@@ -229,6 +234,7 @@ On **Omarchy 4.0.0.alpha**: the initial collection was tested in a real graphica
 - Repeated the isolated Omarchy installation after the English cutover: **14 still wallpapers**, with no optional video in the default background cycle or selected as the active background.
 - Optional WebM: all **576 frames** decoded, **1920 × 1080 / 24 fps / 24 seconds**, one VP9 video stream and **no audio**. A complete FFplay playback run with SDL's dummy output exited successfully, and sampled frames were visually reviewed. Native OWE wallpaper playback was **not** tested on the older installed build.
 - Ran the official registry's `validateTheme` implementation locally against the final tree: **passed, zero errors**. It reported advisories for the unconventional repository name, palette keys unknown to that registry version, the 26.31 MiB still collection, and the existing development renderer. There was **no `BACKGROUND_VIDEO` warning**: the optional clip is outside `backgrounds/`. This local validation is not remote acceptance or maintainer approval.
+- Bar-only orange override: installed through the real Omarchy installer in an isolated HOME, confirming orange bar text with unchanged application, popup and control colors. Applied to the live desktop without changing the wallpaper or `shell.json`; the clock and monochrome icons were visually checked with transparency enabled. The native contrast helper kept orange for 13 of the 14 supplied wallpapers at a 1920 × 1080 top-bar sample and chose dark text for **The Last Corridor**, consistent with the retained automatic behavior.
 
 The wallpapers total **26.31 MiB**. Originals are retained without additional compression: this slightly exceeds the registry's advisory 25 MiB warning threshold, but every image meets its hard limits of 50 MB and 40 megapixels. A community submission does not imply acceptance or bundling by default.
 
