@@ -48,8 +48,11 @@ captures of a real Omarchy desktop, minimally cropped to 16:9 and, for the
 WebP catalog image, reduced to 1200x675. No desktop content is composited.
 The screenshot contribution is under this MIT license; depicted software
 retains its own rights. The shown wallpapers retain their source licenses:
-preview.png and previews/halloween.webp show photograph 04 (PxHere 774668,
-CC0 1.0); previews/desktop-mansion.png shows original wallpaper 12 (CC0 1.0).
+preview.png and previews/halloween.webp show fictional AI-generated wallpaper
+14, Don't Look at the Glass, under the qualified CC0 dedication stated above.
+Its generation provenance is documented in sources/13-14-generated.json;
+the desktop capture itself is real, not an AI-generated desktop mockup.
+previews/desktop-mansion.png shows original wallpaper 12 (CC0 1.0).
 These screenshots are not covered by the separate original-art dedication.
 
 THIRD-PARTY PHOTOGRAPH ATTRIBUTIONS
