@@ -144,13 +144,13 @@ The **default edition** contains the fourteen still wallpapers above. The **anim
 
 **Created with Grok.** The repository owner generated this animation with Grok and authorized its publication. Grok's [output-ownership guidance](https://x.ai/legal/faq#who-owns-the-inputs-to-and-outputs-from-grok) says users own their outputs and may use them commercially; its [brand guidelines](https://x.ai/legal/brand-guidelines) request this attribution. This is an AI-generated fictional scene, not real footage or an endorsement by Grok. The supplied animation is not automatically relicensed under the still image's CC0 dedication; see [provenance and rights](SOURCES.md#optional-animated-wallpaper).
 
-**Compatibility requirement:** use an Omarchy release with native **OWE video wallpaper support**, as documented in the [official background manual](https://github.com/omacom/omarchy/blob/quattro/manual/39-backgrounds.md). As checked on 2026-10-18, the reference machine runs stable **4.0.5-1**, which cannot play this edition. Native video support is merged into development under the [4.5 milestone](https://github.com/omacom/omarchy/pull/6792), not the current stable release. Wait for a supported release containing that feature before enabling the video; changing to an experimental channel is not required for the static theme.
+**Compatibility requirement:** use an Omarchy build with native **OWE video wallpaper support**, as documented in the [official background manual](https://github.com/omacom/omarchy/blob/quattro/manual/39-backgrounds.md). The tested stable **4.0.5-1** build cannot play this edition. Development builds on the **edge** channel include video support; the feature is tracked under the [4.5 milestone](https://github.com/omacom/omarchy/pull/6792). **Switching channels updates the system, not just the wallpaper, and development builds can break.** See the [official channel guidance](https://github.com/omacom/omarchy/blob/quattro/manual/30-updates.md). An experimental channel is not required for the static theme.
 
 The video deliberately lives **outside `backgrounds/`**. Installing the theme does not enable it or add it to the wallpaper cycle. A marketplace install may omit `optional/` entirely; download the media explicitly using the instructions below.
 
 ### Enable
 
-With a compatible Omarchy version and **Halloween installed and selected**, run:
+**Only users who want animation need to opt in.** Installing Halloween does not activate the video. With a compatible Omarchy build and **Halloween installed and selected**, download and select the silent WebM once:
 
 ```bash
 video="$HOME/.config/omarchy/backgrounds/theme-halloween/halloween-jumpscare.webm"
@@ -160,19 +160,39 @@ curl --fail --location --output "$video" \
   omarchy theme bg set "$video"
 ```
 
+If you already cloned this repository, you can copy the same file instead of downloading it. Run this alternative **from the repository root**:
+
+```bash
+video="$HOME/.config/omarchy/backgrounds/theme-halloween/halloween-jumpscare.webm"
+mkdir -p "$HOME/.config/omarchy/backgrounds/theme-halloween" &&
+  cp optional/halloween-jumpscare.webm "$video" &&
+  omarchy theme bg set "$video"
+```
+
+Use **`halloween-jumpscare.webm`**, not the original `pasillo.mp4`, which retains its audio. Once the WebM is in the user background folder, select it with **`Super + Ctrl + Space`** whenever you want it; you do not need to rerun the download or copy command.
+
 **The last command immediately selects the animated wallpaper.** After installation, it also appears in the normal background picker/cycle. The effect stays behind application windows; it is not an on-top popup. Omarchy may preserve the selected wallpaper across logins and also display its video on the lock screen, depending on the version. Video consumes more power than a still; consumption has not been measured here.
 
-### Disable and remove
+### Stop playback and keep the video
 
-Select a still first, then remove the optional file so that cycling backgrounds cannot select it again:
+Choose a still image with **`Super + Ctrl + Space`**, or return directly to the original corridor image:
 
 ```bash
 omarchy theme bg set \
-  "$HOME/.config/omarchy/themes/theme-halloween/backgrounds/04-pumpkin-and-lantern.jpg" &&
-  rm -f -- "$HOME/.config/omarchy/backgrounds/theme-halloween/halloween-jumpscare.webm"
+  "$HOME/.config/omarchy/themes/theme-halloween/backgrounds/13-the-last-corridor.webp"
 ```
 
+Selecting a still stops video playback without changing the theme or deleting the optional file. The video remains available in the picker for later use.
+
 The fourteen default wallpapers remain installed. No daemon, plugin, configuration entry or autostart needs removing.
+
+### Remove the optional video
+
+After selecting a still as shown above, remove the optional file only if you no longer want it offered when cycling backgrounds:
+
+```bash
+rm -f -- "$HOME/.config/omarchy/backgrounds/theme-halloween/halloween-jumpscare.webm"
+```
 
 ### Listing policy
 
