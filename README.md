@@ -15,20 +15,23 @@ Updated real desktop capture with the **pumpkin-orange transparent bar**, **14-w
 | Night | `#121016` | Main background |
 | Void | `#08070C` | Deepest surface |
 | Aubergine | `#251D2D` | Raised surfaces |
-| Pumpkin | `#FF9A3C` | Bar text, accent, focus and actions |
-| Amethyst | `#BB9AF7` | Active-border endpoint and purple |
+| Pumpkin | `#FF9A3C` | Unchanged bar text, accent, focus, actions and normal ANSI yellow |
+| Border amethyst | `#BB9AF7` | Unchanged active-border endpoint |
+| Spell purple | `#B06BF5` | Semantic purple and Foot's normal ANSI magenta slot |
 | Ivory | `#F5E9D3` | Main text |
 | Bone | `#FFF4DF` | Bright text and generated cursor |
 | Gray lavender | `#9B8DA8` | Muted text |
 | Plum | `#4B2E53` | Selection, with `#FFF4DF` text |
-| Crimson | `#FF667A` | Errors and alerts |
-| Potion | `#B5D66F` | Success and ANSI green |
-| Candle | `#FFD166` | Warnings and ANSI yellow |
-| Blue moon | `#A5B4FC` | ANSI blue |
-| Spectral pink | `#ED96C3` | ANSI magenta |
-| Ectoplasm | `#7ED6C4` | ANSI cyan |
+| Crimson | `#FF5263` | Errors and alerts |
+| Potion | `#A8CF40` | Success and ANSI green |
+| Flame | `#FFB05C` | Bright ANSI yellow, kept orange rather than cream |
+| Blue moon | `#7F95F5` | ANSI blue |
+| Spectral pink | `#E96AA9` | ANSI magenta in templates using the magenta token |
+| Ectoplasm | `#3DCBB2` | ANSI cyan |
 
 Active border: pumpkin → amethyst gradient at 45°. Inactive border: `#4B3A55`. The gradient is a color declaration, not an animation. Bright ANSI colors are defined separately. `icons.theme` selects **Yaru**, the orange variant available by default according to the manual.
+
+The application palette now uses stronger, less pastel colored accents. Both normal and bright ANSI yellow stay pumpkin-orange; the top bar's **base setting** remains exactly `#FF9A3C`, with its native transparency and automatic contrast behavior preserved. Main ivory text, dark surfaces, selection and border colors are unchanged. Terminals receive these colors through Omarchy's normal generated templates, without global template overrides. Alacritty can reload the generated palette; open a new Foot window to use it. Wallpaper artwork and existing screenshot/art previews retain the colors captured or drawn originally; no wallpaper was recolored.
 
 The clock and theme-aware monochrome bar icons use **pumpkin orange `#FF9A3C`** through the native `shell.bar.toml` section override. Application and popup text remains ivory; full-color application/tray icons retain their own artwork.
 

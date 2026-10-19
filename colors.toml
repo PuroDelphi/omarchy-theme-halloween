@@ -21,25 +21,25 @@ dark_foreground = "#B6A6C1"
 light_foreground = "#D8C9E3"
 bright_foreground = "#FFF4DF"
 
-# Semantic accents / ANSI base colors.
-red = "#FF667A"
-green = "#B5D66F"
-yellow = "#FFD166"
-blue = "#A5B4FC"
-purple = "#BB9AF7"
-magenta = "#ED96C3"
-cyan = "#7ED6C4"
+# Vivid semantic accents / ANSI base colors; ANSI yellow is pumpkin orange.
+red = "#FF5263"
+green = "#A8CF40"
+yellow = "#FF9A3C"
+blue = "#7F95F5"
+purple = "#B06BF5"
+magenta = "#E96AA9"
+cyan = "#3DCBB2"
 orange = "#FF9A3C"
 brown = "#B88565"
 
-# Bright terminal colors; intentionally distinct from the base palette.
-bright_red = "#FF8A99"
-bright_green = "#CAE894"
-bright_yellow = "#FFE29A"
-bright_blue = "#C1CBFF"
-bright_purple = "#D2B8FF"
-bright_magenta = "#FFB5DC"
-bright_cyan = "#A5EADC"
+# Bright terminal colors retain their hue instead of fading toward white.
+bright_red = "#FF7481"
+bright_green = "#BCE65A"
+bright_yellow = "#FFB05C"
+bright_blue = "#9CAFFF"
+bright_purple = "#C58AFF"
+bright_magenta = "#F58AC0"
+bright_cyan = "#63E0C5"
 
 # Shared border gradient: pumpkin to amethyst, no compositor code shipped.
 hyprland_active_border = "#FF9A3C #BB9AF7 45deg"
