@@ -28,10 +28,24 @@ The original vector wallpapers 11/12, their SVG sources and art previews
 are dedicated under CC0 1.0 Universal. Wallpapers 13/14 are fictional
 AI-generated images created with FLUX.1 [schnell], not real photographs.
 To the extent rights exist in the project contribution to those images and
-previews/horror-contact-sheet.jpg and the animated derivative
-optional/halloween-jumpscare.webm, they are also dedicated under CC0.
+previews/horror-contact-sheet.jpg, they are also dedicated under CC0.
 See ARTWORK-LICENSE for scope, provenance and the AI-output rights disclaimer.
 The vector generator remains under this MIT software license.
+
+optional/halloween-jumpscare.webm is an owner-supplied Grok animation of scene
+13, not a fifth independently created still wallpaper. Created with Grok.
+The owner confirmed the generator and authorized publication. The supplied
+animation itself is NOT covered by this MIT license or the artwork CC0
+dedication. The qualified dedication of the underlying still and only the
+project's own encoding contribution does not override external rights or
+conditions. Grok's public output guidance states that users own their outputs
+and may use them commercially. Retain the Created with Grok credit with the
+distributed animation, without implying provider endorsement.
+Output guidance: https://x.ai/legal/faq#who-owns-the-inputs-to-and-outputs-from-grok
+Consumer terms: https://x.ai/legal/terms-of-service#4-user-content
+Attribution guidance: https://x.ai/legal/brand-guidelines
+References checked on 2026-10-19.
+See SOURCES.md and sources/optional-jumpscare.json for provenance and parameters.
 
 The ten downloaded wallpapers (numbered 01 through 10) and their thumbnails
 retain their individual third-party licenses. See SOURCES.md for attribution,

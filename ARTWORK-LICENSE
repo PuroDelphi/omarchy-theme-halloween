@@ -32,7 +32,6 @@ EXCLUSIVE SCOPE
 - backgrounds/13-the-last-corridor.webp
 - backgrounds/14-dont-look-at-the-glass.webp
 - previews/horror-contact-sheet.jpg
-- optional/halloween-jumpscare.webm
 
 This dedication does NOT cover the ten downloaded third-party wallpapers,
 their photographs, the combined previews/contact-sheet.png or the real
@@ -54,10 +53,21 @@ and parameters are in sources/13-14-generated.json. The 2048x1152 WebPs are
 the provider's originals, without upscaling, conversion, retouching or
 recomposition. The comparison contact sheet does reduce their size.
 
-optional/halloween-jumpscare.webm is a silent animated derivative of 13/14,
-with scaling, a brief zoom, a cut and a fade. The same qualified CC0
-dedication applies to the project's contribution to this derivative.
-Its source hashes and production parameters are documented in
+optional/halloween-jumpscare.webm is an owner-supplied Grok animation of scene
+13, exported silently at its native 736x400 resolution. Scene 14 is not used.
+Created with Grok. The owner confirmed the generator and authorized publication.
+The exact model version, prompt and generation settings were not supplied.
+The supplied animation itself is NOT included in the dedication above;
+no blanket MIT or CC0 license is asserted for that animation.
+The qualified CC0 dedication of the underlying still and only the project's
+own encoding contribution does not override external rights or conditions.
+Grok's public output guidance says users own their outputs and may use them
+commercially. Keep the Created with Grok credit with the distributed animation;
+this does not imply provider endorsement.
+Output guidance: https://x.ai/legal/faq#who-owns-the-inputs-to-and-outputs-from-grok
+Consumer terms: https://x.ai/legal/terms-of-service#4-user-content
+Attribution guidance: https://x.ai/legal/brand-guidelines
+References checked on 2026-10-19. Source hashes and export parameters are in
 sources/optional-jumpscare.json.
 
 The FLUX.1 [schnell] model is released under Apache-2.0:
