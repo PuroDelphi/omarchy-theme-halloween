@@ -141,38 +141,47 @@ The requested repository is named `omarchy-theme-halloween`: Omarchy removes the
 
 ## Optional animated edition
 
-The **default edition** contains the fourteen still wallpapers above. The **animated edition** uses [`optional/halloween-jumpscare.webm`](optional/halloween-jumpscare.webm), a **15.042-second, 736 × 400, 24 fps, silent** VP9 video supplied by the repository owner: the figure from **13 — The Last Corridor** moves toward the viewer, ending in a close-up scare with reaching hands and broken-glass imagery. Scene 14 is not animated in this version. There is no executable installer, plugin, service or hook.
+The **default edition** contains the fourteen still wallpapers above. The **animated edition** offers two separate optional videos of **13 — The Last Corridor**. Both are **15.042-second, 736 × 400, 24 fps, silent VP9 WebMs with 361 frames**. Scene 14 is not animated in either clip. There is no executable installer, plugin, service or hook.
 
-**Low-resolution source:** the export preserves all 361 frames at the supplied clip's native dimensions, without upscaling, cropping, interpolation or added transitions. Full-screen playback will look softer than the still wallpapers. Playback repeats with a visible reset; the ending does not match the opening, so this is **not a seamless loop**. The original MP4 remains unchanged locally; its audio and attached cover image are excluded from the wallpaper export.
+| Choice | File | Scene |
+| --- | --- | --- |
+| First clip | [`halloween-jumpscare.webm`](optional/halloween-jumpscare.webm) | Approaching figure, ending in a close-up scare with reaching hands and broken-glass imagery |
+| New second clip | [`the-last-corridor-2.webm`](optional/the-last-corridor-2.webm) | A separate take with spreading hair, changing facial expressions and an approaching figure |
 
-**Created with Grok.** The repository owner generated this animation with Grok and authorized its publication. Grok's [output-ownership guidance](https://x.ai/legal/faq#who-owns-the-inputs-to-and-outputs-from-grok) says users own their outputs and may use them commercially; its [brand guidelines](https://x.ai/legal/brand-guidelines) request this attribution. This is an AI-generated fictional scene, not real footage or an endorsement by Grok. The supplied animation is not automatically relicensed under the still image's CC0 dedication; see [provenance and rights](SOURCES.md#optional-animated-wallpaper).
+The second clip is an **additional choice**, not a replacement or a concatenation. Keep either or both, and select the one you want.
+
+**Low-resolution sources:** both exports preserve the supplied clips' native frames and dimensions, without upscaling, cropping, interpolation or added transitions. Full-screen playback will look softer than the still wallpapers. Each repeats with a visible reset; neither is presented as a seamless loop. The original `pasillo.mp4` and `pasillo2.mp4` remain unchanged locally; their audio and attached cover images are excluded from the wallpaper exports.
+
+**Created with Grok.** The repository owner confirmed that both animations were generated with Grok and requested their publication. Grok's [output-ownership guidance](https://x.ai/legal/faq#who-owns-the-inputs-to-and-outputs-from-grok) says users own their outputs and may use them commercially; its [brand guidelines](https://x.ai/legal/brand-guidelines) request this attribution. These are AI-generated fictional scenes, not real footage or an endorsement by Grok. The supplied animations are not automatically relicensed under the still image's CC0 dedication; see [provenance and rights](SOURCES.md#optional-animated-wallpaper).
 
 **Compatibility requirement:** use an Omarchy build with native **OWE video wallpaper support**, as documented in the [official background manual](https://github.com/omacom/omarchy/blob/quattro/manual/39-backgrounds.md). The tested stable **4.0.5-1** build cannot play this edition. Development builds on the **edge** channel include video support; the feature is tracked under the [4.5 milestone](https://github.com/omacom/omarchy/pull/6792). **Switching channels updates the system, not just the wallpaper, and development builds can break.** See the [official channel guidance](https://github.com/omacom/omarchy/blob/quattro/manual/30-updates.md). An experimental channel is not required for the static theme.
 
-The video deliberately lives **outside `backgrounds/`**. Installing the theme does not enable it or add it to the wallpaper cycle. A marketplace install may omit `optional/` entirely; download the media explicitly using the instructions below.
+Both clips deliberately live **outside `backgrounds/`**. Installing the theme does not enable them or add them to the wallpaper cycle. A marketplace install may omit `optional/` entirely; download the chosen media explicitly using the instructions below.
 
 ### Enable
 
-**Only users who want animation need to opt in.** Installing Halloween does not activate the video. With a compatible Omarchy build and **Halloween installed and selected**, download and select the silent WebM once:
+**Only users who want animation need to opt in.** Installing Halloween does not activate either video. With a compatible Omarchy build and **Halloween installed and selected**, download and select a silent WebM once. The examples below select the **new second clip**; set `clip="halloween-jumpscare.webm"` instead to select the first.
 
 ```bash
-video="$HOME/.config/omarchy/backgrounds/theme-halloween/halloween-jumpscare.webm"
-mkdir -p "$HOME/.config/omarchy/backgrounds/theme-halloween"
-curl --fail --location --output "$video" \
-  https://raw.githubusercontent.com/PuroDelphi/omarchy-theme-halloween/main/optional/halloween-jumpscare.webm &&
-  omarchy theme bg set "$video"
-```
-
-If you already cloned this repository, you can copy the same file instead of downloading it. Run this alternative **from the repository root**:
-
-```bash
-video="$HOME/.config/omarchy/backgrounds/theme-halloween/halloween-jumpscare.webm"
+clip="the-last-corridor-2.webm"
+video="$HOME/.config/omarchy/backgrounds/theme-halloween/$clip"
 mkdir -p "$HOME/.config/omarchy/backgrounds/theme-halloween" &&
-  cp optional/halloween-jumpscare.webm "$video" &&
+  curl --fail --location --output "$video" \
+    "https://raw.githubusercontent.com/PuroDelphi/omarchy-theme-halloween/main/optional/$clip" &&
   omarchy theme bg set "$video"
 ```
 
-Use **`halloween-jumpscare.webm`**, not the original `pasillo.mp4`, which retains its audio. Once the WebM is in the user background folder, select it with **`Super + Ctrl + Space`** whenever you want it; you do not need to rerun the download or copy command.
+If you already cloned this repository, you can copy the selected file instead of downloading it. Run this alternative **from the repository root**:
+
+```bash
+clip="the-last-corridor-2.webm"
+video="$HOME/.config/omarchy/backgrounds/theme-halloween/$clip"
+mkdir -p "$HOME/.config/omarchy/backgrounds/theme-halloween" &&
+  cp "optional/$clip" "$video" &&
+  omarchy theme bg set "$video"
+```
+
+Use the exported **`.webm` files**, not the original `pasillo.mp4` or `pasillo2.mp4`, which retain their audio. Once copied to the user background folder, the clips can be selected with **`Super + Ctrl + Space`** whenever you want them; you do not need to rerun the download or copy command.
 
 **The last command immediately selects the animated wallpaper.** After installation, it also appears in the normal background picker/cycle. The effect stays behind application windows; it is not an on-top popup. Omarchy may preserve the selected wallpaper across logins and also display its video on the lock screen, depending on the version. Video consumes more power than a still; consumption has not been measured here.
 
@@ -185,23 +194,24 @@ omarchy theme bg set \
   "$HOME/.config/omarchy/themes/theme-halloween/backgrounds/13-the-last-corridor.webp"
 ```
 
-Selecting a still stops video playback without changing the theme or deleting the optional file. The video remains available in the picker for later use.
+Selecting a still stops video playback without changing the theme or deleting the optional files. Copied videos remain available in the picker for later use.
 
 The fourteen default wallpapers remain installed. No daemon, plugin, configuration entry or autostart needs removing.
 
-### Remove the optional video
+### Remove the optional videos
 
-After selecting a still as shown above, remove the optional file only if you no longer want it offered when cycling backgrounds:
+After selecting a still as shown above, remove either or both optional copies if you no longer want them offered when cycling backgrounds. This example removes both entries:
 
 ```bash
-rm -f -- "$HOME/.config/omarchy/backgrounds/theme-halloween/halloween-jumpscare.webm"
+rm -f -- "$HOME/.config/omarchy/backgrounds/theme-halloween/halloween-jumpscare.webm" \
+  "$HOME/.config/omarchy/backgrounds/theme-halloween/the-last-corridor-2.webm"
 ```
 
 ### Listing policy
 
-The [theme registry](https://github.com/omacom/omarchy-theme-registry#what-gets-checked) recognizes video backgrounds. Its [validator](https://github.com/omacom/omarchy-theme-registry/blob/master/packages/validator/src/validate.ts) issues a `BACKGROUND_VIDEO` resource warning for videos under `backgrounds/`, not an automatic rejection. This opt-in asset is outside that directory and needs no executable code. **Neither the manual nor the validator guarantees maintainer approval or inclusion among Omarchy's bundled themes.**
+The [theme registry](https://github.com/omacom/omarchy-theme-registry#what-gets-checked) recognizes video backgrounds. Its [validator](https://github.com/omacom/omarchy-theme-registry/blob/master/packages/validator/src/validate.ts) issues a `BACKGROUND_VIDEO` resource warning for videos under `backgrounds/`, not an automatic rejection. These opt-in assets are outside that directory and need no executable code. **Neither the manual nor the validator guarantees maintainer approval or inclusion among Omarchy's bundled themes.**
 
-Source hashes, the exact production command and qualified artwork rights are documented in [`sources/optional-jumpscare.json`](sources/optional-jumpscare.json), [`SOURCES.md`](SOURCES.md) and [`ARTWORK-LICENSE`](ARTWORK-LICENSE).
+Source hashes, export commands and qualified artwork rights are documented in [`sources/optional-jumpscare.json`](sources/optional-jumpscare.json), [`sources/optional-corridor-2.json`](sources/optional-corridor-2.json), [`SOURCES.md`](SOURCES.md) and [`ARTWORK-LICENSE`](ARTWORK-LICENSE).
 
 
 ## Distribution and approval
@@ -263,7 +273,8 @@ Initial validation environment: **stable Omarchy 4.0.5-1**, as reported by the i
 - Screenshots came from the native **1366 × 768** monitor, minimally cropped by 3 pixels on each side and 1/2 pixels at the top/bottom to **1360 × 765**, without upscaling or distortion. The current WebP was reduced to **1200 × 675**, quality **80**, stripped metadata, **51,702 bytes**.
 - English filename migration, local Markdown link targets and AI-image provenance hashes: checked. The translated renderer generated scene 11 successfully at 1920 × 1080.
 - Repeated the isolated Omarchy installation after the English cutover: **14 still wallpapers**, with no optional video in the default background cycle or selected as the active background.
-- Replacement optional WebM: all **361 frames** decoded, **736 × 400 / 24 fps / 15.042 seconds**, one VP9 video stream and **no audio**. A complete FFplay playback run with SDL's dummy output exited successfully, and sampled frames were visually reviewed. The supplied MP4 and all fourteen still wallpapers remain unchanged. Native OWE wallpaper playback was **not** tested on the installed stable build.
+- First optional WebM (`halloween-jumpscare.webm`): all **361 frames** decoded, **736 × 400 / 24 fps / 15.042 seconds**, one VP9 video stream and **no audio**. A complete FFplay playback run with SDL's dummy output exited successfully, and sampled frames were visually reviewed. The supplied MP4 and all fourteen still wallpapers remain unchanged. Native OWE wallpaper playback was **not** tested on the installed stable build.
+- Second optional WebM (`the-last-corridor-2.webm`): all **361 frames** decoded, **736 × 400 / 24 fps / 15.042 seconds**, one VP9 stream and **no audio**. Full FFplay playback with SDL's dummy output exited **0**, and sampled frames were visually reviewed. README Bash examples passed syntax checks; the documented copy command copied the exact second clip in an isolated HOME without executing wallpaper selection. Source MP4 hashes, the first video, all fourteen stills, the vivid palette, bar override and desktop previews were preserved. The second clip was not enabled automatically.
 - Before the corridor-video replacement, ran the official registry's `validateTheme` implementation locally: **passed, zero errors**. It reported advisories for the unconventional repository name, palette keys unknown to that registry version, the 26.31 MiB still collection, and the existing development renderer. There was **no `BACKGROUND_VIDEO` warning** because the optional clip was outside `backgrounds/`; the replacement retains that layout. The registry validator has not been rerun for this replacement. Local validation is not remote acceptance or maintainer approval.
 - Bar-only orange override: installed through the real Omarchy installer in an isolated HOME, confirming orange bar text with unchanged application, popup and control colors. Applied to the live desktop without changing the wallpaper or `shell.json`; the clock and monochrome icons were visually checked with transparency enabled. The native contrast helper kept orange for 13 of the 14 supplied wallpapers at a 1920 × 1080 top-bar sample and chose dark text for **The Last Corridor**, consistent with the retained automatic behavior.
 - Vivid ANSI revision on **edge**: ran the real Omarchy template generator in an isolated HOME and passed `foot --check-config`. Applied the palette with `omarchy theme refresh` and visually inspected native ANSI output in a real Alacritty window: normal yellow is **`#FF9A3C`**, bright yellow is **`#FFB05C`**, and the other colored accents are stronger rather than near-white pastels. The revised colored accents have at least **5.64:1** contrast against the solid `#121016` background. The bar section, global `shell.json` and selected wallpaper remained unchanged. The temporary comparison window and private captures were removed; the user's windows were preserved.
@@ -288,6 +299,6 @@ The **14 still wallpapers** consist of **10 third-party downloads and 4 project-
 | 2 FLUX-generated horror scenes | 13–14 and their comparison preview | Project contribution dedicated under [CC0 only to the extent applicable rights exist](ARTWORK-LICENSE), without a promise of exclusivity or copyright protection |
 | 10 downloaded photographs | 01–10 and their thumbnails | Their individual source licenses and attribution in [SOURCES.md](SOURCES.md); **not relicensed by the project** |
 
-Configuration, tools and documentation use [MIT](LICENSE). The optional video is an **owner-supplied Grok animation of scene 13**, not a fifth independently created still wallpaper. **Created with Grok**; its provenance and links to the provider's output guidance and attribution requirements are in [SOURCES.md](SOURCES.md#optional-animated-wallpaper). No blanket MIT or CC0 license is asserted for the supplied animation itself. The qualified dedication of the underlying still is unchanged. Contact sheets are presentations of existing works, not additional wallpapers or waivers of the depicted works' rights. Installing the theme does not run generators or require their dependencies.
+Configuration, tools and documentation use [MIT](LICENSE). The two optional videos are **owner-supplied Grok animations of scene 13**, not additional independently created still wallpapers. **Created with Grok**; their provenance and links to the provider's output guidance and attribution requirements are in [SOURCES.md](SOURCES.md#optional-animated-wallpaper). No blanket MIT or CC0 license is asserted for the supplied animations themselves. The qualified dedication of the underlying still is unchanged. Contact sheets are presentations of existing works, not additional wallpapers or waivers of the depicted works' rights. Installing the theme does not run generators or require their dependencies.
 
 Required attribution, license links and the dedication of the four project-created works are also included in **`LICENSE`**, so they accompany the wallpapers even if a selective installer does not copy `SOURCES.md` or `ARTWORK-LICENSE`.

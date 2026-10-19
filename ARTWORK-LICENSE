@@ -6,7 +6,7 @@ SPDX-License-Identifier: CC0-1.0
 This dedication identifies FOUR project-created still wallpapers:
 - 11/12: two procedural vector illustrations.
 - 13/14: two fictional FLUX-generated horror scenes.
-The listed source files, previews and optional video are derivatives or
+The listed source files, previews and two optional videos are derivatives or
 presentations of those four works, not additional independent wallpapers.
 
 To the extent permitted by law, the authors dedicate the copyright and
@@ -53,22 +53,23 @@ and parameters are in sources/13-14-generated.json. The 2048x1152 WebPs are
 the provider's originals, without upscaling, conversion, retouching or
 recomposition. The comparison contact sheet does reduce their size.
 
-optional/halloween-jumpscare.webm is an owner-supplied Grok animation of scene
-13, exported silently at its native 736x400 resolution. Scene 14 is not used.
-Created with Grok. The owner confirmed the generator and authorized publication.
-The exact model version, prompt and generation settings were not supplied.
-The supplied animation itself is NOT included in the dedication above;
-no blanket MIT or CC0 license is asserted for that animation.
+optional/halloween-jumpscare.webm and optional/the-last-corridor-2.webm are
+two owner-supplied Grok animations of scene 13, exported silently at their
+native 736x400 resolution. Scene 14 is not used. Created with Grok.
+The owner confirmed Grok as the generator of both and requested publication.
+The exact model versions, prompts and generation settings were not supplied.
+These supplied animations are NOT included in the dedication above;
+no blanket MIT or CC0 license is asserted for those animations.
 The qualified CC0 dedication of the underlying still and only the project's
 own encoding contribution does not override external rights or conditions.
 Grok's public output guidance says users own their outputs and may use them
-commercially. Keep the Created with Grok credit with the distributed animation;
+commercially. Keep the Created with Grok credit with the distributed animations;
 this does not imply provider endorsement.
 Output guidance: https://x.ai/legal/faq#who-owns-the-inputs-to-and-outputs-from-grok
 Consumer terms: https://x.ai/legal/terms-of-service#4-user-content
 Attribution guidance: https://x.ai/legal/brand-guidelines
 References checked on 2026-10-19. Source hashes and export parameters are in
-sources/optional-jumpscare.json.
+sources/optional-jumpscare.json and sources/optional-corridor-2.json.
 
 The FLUX.1 [schnell] model is released under Apache-2.0:
 https://bfl.ai/blog/24-08-01-bfl
