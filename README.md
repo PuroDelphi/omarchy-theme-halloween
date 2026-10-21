@@ -228,7 +228,7 @@ The theme uses the semantic format of the reference installation, **Omarchy 4.0.
 ### Community submissions
 
 - **Website catalog:** [PR #586](https://github.com/omacom/omarchy-site/pull/586). The submission locally passed build, lint, type checks, **51 Node + 45 Python tests**, static parity and visual browser inspection of the catalog. These local checks are not remote checks or maintainer approval.
-- **Marketplace registry:** [submission #128](https://github.com/omacom/omarchy-theme-registry/issues/128), including the URL, name, rights/privacy confirmations and real screenshots. The account lacks permission to add the `submission` label; a maintainer was asked to apply it and trigger validation. No claim is made that the remote validator approved the theme.
+- **Marketplace registry:** [submission #141](https://github.com/omacom/omarchy-theme-registry/issues/141), created through the official form with the `submission` label. On **2026-10-21**, the [remote bot report](https://github.com/omacom/omarchy-theme-registry/issues/141#issuecomment-6319657054) **passed validation**, with warnings but no blocking errors, and the bot opened [registry PR #142](https://github.com/omacom/omarchy-theme-registry/pull/142), labelled `submission` and `auto-approve`. Those labels are not maintainer approval: the PR still needs to be merged before publication. The earlier unlabelled [submission #128](https://github.com/omacom/omarchy-theme-registry/issues/128) was closed as superseded, with a link to the replacement.
 - Both submissions describe the theme's included content. Follow their links for the maintainers' current decisions; submission does not imply immediate catalog listing.
 
 ### Website catalog: specific requirements
