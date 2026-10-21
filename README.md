@@ -141,29 +141,30 @@ The requested repository is named `omarchy-theme-halloween`: Omarchy removes the
 
 ## Optional animated edition
 
-The **default edition** contains the fourteen still wallpapers above. The **animated edition** offers two separate optional videos of **13 — The Last Corridor**. Both are **15.042-second, 736 × 400, 24 fps, silent VP9 WebMs with 361 frames**. Scene 14 is not animated in either clip. There is no executable installer, plugin, service or hook.
+The **default edition** contains the fourteen still wallpapers above. The **animated edition** offers **three separate optional videos**: two takes of **13 — The Last Corridor** and one animation of **14 — Don't Look at the Glass**. Each is a **15.042-second, 24 fps, silent VP9 WebM with 361 frames**, at the source dimensions listed below. There is no executable installer, plugin, service or hook.
 
-| Choice | File | Scene |
-| --- | --- | --- |
-| First clip | [`halloween-jumpscare.webm`](optional/halloween-jumpscare.webm) | Approaching figure, ending in a close-up scare with reaching hands and broken-glass imagery |
-| New second clip | [`the-last-corridor-2.webm`](optional/the-last-corridor-2.webm) | A separate take with spreading hair, changing facial expressions and an approaching figure |
+| Choice | File | Native resolution | Scene |
+| --- | --- | --- | --- |
+| First corridor clip | [`halloween-jumpscare.webm`](optional/halloween-jumpscare.webm) | 736 × 400 | Approaching figure, ending in a close-up scare with reaching hands and broken-glass imagery |
+| Second corridor clip | [`the-last-corridor-2.webm`](optional/the-last-corridor-2.webm) | 736 × 400 | A separate take with spreading hair, changing facial expressions and an approaching figure |
+| Glass / reflection clip | [`dont-look-at-the-glass.webm`](optional/dont-look-at-the-glass.webm) | 1280 × 720 | The figure behind wet glass moves its fingers, hand and face |
 
-The second clip is an **additional choice**, not a replacement or a concatenation. Keep either or both, and select the one you want.
+Each clip is an **additional choice**, not a replacement or a concatenation. Keep any combination and select the one you want.
 
-**Low-resolution sources:** both exports preserve the supplied clips' native frames and dimensions, without upscaling, cropping, interpolation or added transitions. Full-screen playback will look softer than the still wallpapers. Each repeats with a visible reset; neither is presented as a seamless loop. The original `pasillo.mp4` and `pasillo2.mp4` remain unchanged locally; their audio and attached cover images are excluded from the wallpaper exports.
+**Native-resolution exports:** all three preserve the supplied clips' frames and dimensions, without upscaling, cropping, interpolation or added transitions. The two corridor clips will look softer at full-screen size than the 720p glass clip; none is presented as a seamless loop. The original source MP4s remain unchanged locally; their audio and attached cover images are excluded from the wallpaper exports.
 
-**Created with Grok.** The repository owner confirmed that both animations were generated with Grok and requested their publication. Grok's [output-ownership guidance](https://x.ai/legal/faq#who-owns-the-inputs-to-and-outputs-from-grok) says users own their outputs and may use them commercially; its [brand guidelines](https://x.ai/legal/brand-guidelines) request this attribution. These are AI-generated fictional scenes, not real footage or an endorsement by Grok. The supplied animations are not automatically relicensed under the still image's CC0 dedication; see [provenance and rights](SOURCES.md#optional-animated-wallpaper).
+**Generation credits:** the two corridor clips were **Created with Grok**, as confirmed by the repository owner. The generation tool for the supplied glass clip was not specified and is not inferred. Per-file provenance records distinguish them. Grok's [output-ownership guidance](https://x.ai/legal/faq#who-owns-the-inputs-to-and-outputs-from-grok) says users own their outputs and may use them commercially; its [brand guidelines](https://x.ai/legal/brand-guidelines) request this attribution. These are AI-generated fictional scenes, not real footage or provider endorsements. The owner's contributions to the three animations are licensed under **[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)**, to the extent applicable rights exist. Credit **PuroDelphi**, retain documented generation credits, link the license and identify modifications. See [provenance and rights](SOURCES.md#optional-animated-wallpaper).
 
 **Compatibility requirement:** use an Omarchy build with native **OWE video wallpaper support**, as documented in the [official background manual](https://github.com/omacom/omarchy/blob/quattro/manual/39-backgrounds.md). The tested stable **4.0.5-1** build cannot play this edition. Development builds on the **edge** channel include video support; the feature is tracked under the [4.5 milestone](https://github.com/omacom/omarchy/pull/6792). **Switching channels updates the system, not just the wallpaper, and development builds can break.** See the [official channel guidance](https://github.com/omacom/omarchy/blob/quattro/manual/30-updates.md). An experimental channel is not required for the static theme.
 
-Both clips deliberately live **outside `backgrounds/`**. Installing the theme does not enable them or add them to the wallpaper cycle. A marketplace install may omit `optional/` entirely; download the chosen media explicitly using the instructions below.
+All clips deliberately live **outside `backgrounds/`**. Installing the theme does not enable them or add them to the wallpaper cycle. A marketplace install may omit `optional/` entirely; download the chosen media explicitly using the instructions below.
 
 ### Enable
 
-**Only users who want animation need to opt in.** Installing Halloween does not activate either video. With a compatible Omarchy build and **Halloween installed and selected**, download and select a silent WebM once. The examples below select the **new second clip**; set `clip="halloween-jumpscare.webm"` instead to select the first.
+**Only users who want animation need to opt in.** Installing Halloween does not activate any video. With a compatible Omarchy build and **Halloween installed and selected**, download and select a silent WebM once. The examples below select the **glass clip**; set `clip` to another filename from the table to choose either corridor clip.
 
 ```bash
-clip="the-last-corridor-2.webm"
+clip="dont-look-at-the-glass.webm"
 video="$HOME/.config/omarchy/backgrounds/theme-halloween/$clip"
 mkdir -p "$HOME/.config/omarchy/backgrounds/theme-halloween" &&
   curl --fail --location --output "$video" \
@@ -174,14 +175,14 @@ mkdir -p "$HOME/.config/omarchy/backgrounds/theme-halloween" &&
 If you already cloned this repository, you can copy the selected file instead of downloading it. Run this alternative **from the repository root**:
 
 ```bash
-clip="the-last-corridor-2.webm"
+clip="dont-look-at-the-glass.webm"
 video="$HOME/.config/omarchy/backgrounds/theme-halloween/$clip"
 mkdir -p "$HOME/.config/omarchy/backgrounds/theme-halloween" &&
   cp "optional/$clip" "$video" &&
   omarchy theme bg set "$video"
 ```
 
-Use the exported **`.webm` files**, not the original `pasillo.mp4` or `pasillo2.mp4`, which retain their audio. Once copied to the user background folder, the clips can be selected with **`Super + Ctrl + Space`** whenever you want them; you do not need to rerun the download or copy command.
+Use the exported **`.webm` files**, not the original source MP4s, which retain their audio. Once copied to the user background folder, the clips can be selected with **`Super + Ctrl + Space`** whenever you want them; you do not need to rerun the download or copy command.
 
 **The last command immediately selects the animated wallpaper.** After installation, it also appears in the normal background picker/cycle. The effect stays behind application windows; it is not an on-top popup. Omarchy may preserve the selected wallpaper across logins and also display its video on the lock screen, depending on the version. Video consumes more power than a still; consumption has not been measured here.
 
@@ -200,18 +201,19 @@ The fourteen default wallpapers remain installed. No daemon, plugin, configurati
 
 ### Remove the optional videos
 
-After selecting a still as shown above, remove either or both optional copies if you no longer want them offered when cycling backgrounds. This example removes both entries:
+After selecting a still as shown above, remove any optional copies you no longer want offered when cycling backgrounds. This example removes all three entries:
 
 ```bash
 rm -f -- "$HOME/.config/omarchy/backgrounds/theme-halloween/halloween-jumpscare.webm" \
-  "$HOME/.config/omarchy/backgrounds/theme-halloween/the-last-corridor-2.webm"
+  "$HOME/.config/omarchy/backgrounds/theme-halloween/the-last-corridor-2.webm" \
+  "$HOME/.config/omarchy/backgrounds/theme-halloween/dont-look-at-the-glass.webm"
 ```
 
 ### Listing policy
 
 The [theme registry](https://github.com/omacom/omarchy-theme-registry#what-gets-checked) recognizes video backgrounds. Its [validator](https://github.com/omacom/omarchy-theme-registry/blob/master/packages/validator/src/validate.ts) issues a `BACKGROUND_VIDEO` resource warning for videos under `backgrounds/`, not an automatic rejection. These opt-in assets are outside that directory and need no executable code. **Neither the manual nor the validator guarantees maintainer approval or inclusion among Omarchy's bundled themes.**
 
-Source hashes, export commands and qualified artwork rights are documented in [`sources/optional-jumpscare.json`](sources/optional-jumpscare.json), [`sources/optional-corridor-2.json`](sources/optional-corridor-2.json), [`SOURCES.md`](SOURCES.md) and [`ARTWORK-LICENSE`](ARTWORK-LICENSE).
+Source hashes, export commands and artwork rights are documented in [`sources/optional-jumpscare.json`](sources/optional-jumpscare.json), [`sources/optional-corridor-2.json`](sources/optional-corridor-2.json), [`sources/optional-glass.json`](sources/optional-glass.json), [`SOURCES.md`](SOURCES.md) and [`ARTWORK-LICENSE`](ARTWORK-LICENSE).
 
 
 ## Distribution and approval
@@ -230,6 +232,14 @@ The theme uses the semantic format of the reference installation, **Omarchy 4.0.
 - **Website catalog:** [PR #586](https://github.com/omacom/omarchy-site/pull/586). The submission locally passed build, lint, type checks, **51 Node + 45 Python tests**, static parity and visual browser inspection of the catalog. These local checks are not remote checks or maintainer approval.
 - **Marketplace registry:** [submission #141](https://github.com/omacom/omarchy-theme-registry/issues/141), created through the official form with the `submission` label. On **2026-10-21**, the [remote bot report](https://github.com/omacom/omarchy-theme-registry/issues/141#issuecomment-6319657054) **passed validation**, with warnings but no blocking errors, and the bot opened [registry PR #142](https://github.com/omacom/omarchy-theme-registry/pull/142), labelled `submission` and `auto-approve`. Those labels are not maintainer approval: the PR still needs to be merged before publication. The earlier unlabelled [submission #128](https://github.com/omacom/omarchy-theme-registry/issues/128) was closed as superseded, with a link to the replacement.
 - Both submissions describe the theme's included content. Follow their links for the maintainers' current decisions; submission does not imply immediate catalog listing.
+
+### Registry warning decisions
+
+- **`REPO_NO_LICENSE`:** `LICENSE` now contains the exact standard MIT text. Artwork notices live in this README and `ARTWORK-LICENSE`, with explicit CC BY 4.0 grants for the owner's animation contributions and the existing source licenses preserved for photographs.
+- **`REPO_NAME_CONVENTION`:** retain the owner's requested repository URL and the validated install slug `theme-halloween`; this is an advisory, not a reason to rename the repository.
+- **`PALETTE_UNKNOWN_KEYS`:** the registry flags four keys, but the installed edge templates consume `selection_background` and `selection_foreground`, and the native color loader supports `purple` / `bright_purple` aliases. Keep these compatibility keys rather than changing selection colors or application output merely to silence that registry schema warning.
+- **`BACKGROUNDS_LARGE`:** keep the 26.31 MiB still collection at its original quality. The advisory does not justify recompressing the licensed originals or the project's 4K vector illustrations.
+- **`NON_THEME_PAYLOAD`:** keep the optional vector renderer for artwork development. A selective marketplace install excludes it; installing the theme does not execute it.
 
 ### Website catalog: specific requirements
 
@@ -275,7 +285,9 @@ Initial validation environment: **stable Omarchy 4.0.5-1**, as reported by the i
 - Repeated the isolated Omarchy installation after the English cutover: **14 still wallpapers**, with no optional video in the default background cycle or selected as the active background.
 - First optional WebM (`halloween-jumpscare.webm`): all **361 frames** decoded, **736 × 400 / 24 fps / 15.042 seconds**, one VP9 video stream and **no audio**. A complete FFplay playback run with SDL's dummy output exited successfully, and sampled frames were visually reviewed. The supplied MP4 and all fourteen still wallpapers remain unchanged. Native OWE wallpaper playback was **not** tested on the installed stable build.
 - Second optional WebM (`the-last-corridor-2.webm`): all **361 frames** decoded, **736 × 400 / 24 fps / 15.042 seconds**, one VP9 stream and **no audio**. Full FFplay playback with SDL's dummy output exited **0**, and sampled frames were visually reviewed. README Bash examples passed syntax checks; the documented copy command copied the exact second clip in an isolated HOME without executing wallpaper selection. Source MP4 hashes, the first video, all fourteen stills, the vivid palette, bar override and desktop previews were preserved. The second clip was not enabled automatically.
-- Before the corridor-video replacement, ran the official registry's `validateTheme` implementation locally: **passed, zero errors**. It reported advisories for the unconventional repository name, palette keys unknown to that registry version, the 26.31 MiB still collection, and the existing development renderer. There was **no `BACKGROUND_VIDEO` warning** because the optional clip was outside `backgrounds/`; the replacement retains that layout. The registry validator has not been rerun for this replacement. Local validation is not remote acceptance or maintainer approval.
+- Third optional WebM (`dont-look-at-the-glass.webm`): all **361 frames** decoded, **1280 × 720 / 24 fps / 15.042 seconds**, one VP9 stream and **no audio**. Full FFplay playback with SDL's dummy output exited **0**, and sampled source/export frames were visually reviewed. README Bash examples passed syntax checks; an isolated-HOME copy reproduced the exact new WebM hash without changing the selected wallpaper. The original source MP4s, both prior videos, all fourteen stills and desktop previews were preserved.
+- Licensing: the root MIT text matched GitHub's official template exactly, with the existing copyright holder substituted. All three optional-video provenance records parse and match the distributed media hashes, native dimensions, frame counts and explicit CC BY 4.0 grants for the owner's contributions. Required photograph credits and the qualified original-art dedication remain bundled in README for selective installers.
+- Earlier local runs of the official registry's `validateTheme` implementation passed with zero errors and advisories for the repository name, palette schema, still-collection size and optional renderer. Optional clips remain outside `backgrounds/`. See [community submissions](#community-submissions) for the actual remote report; local checks are not maintainer approval.
 - Bar-only orange override: installed through the real Omarchy installer in an isolated HOME, confirming orange bar text with unchanged application, popup and control colors. Applied to the live desktop without changing the wallpaper or `shell.json`; the clock and monochrome icons were visually checked with transparency enabled. The native contrast helper kept orange for 13 of the 14 supplied wallpapers at a 1920 × 1080 top-bar sample and chose dark text for **The Last Corridor**, consistent with the retained automatic behavior.
 - Vivid ANSI revision on **edge**: ran the real Omarchy template generator in an isolated HOME and passed `foot --check-config`. Applied the palette with `omarchy theme refresh` and visually inspected native ANSI output in a real Alacritty window: normal yellow is **`#FF9A3C`**, bright yellow is **`#FFB05C`**, and the other colored accents are stronger rather than near-white pastels. The revised colored accents have at least **5.64:1** contrast against the solid `#121016` background. The bar section, global `shell.json` and selected wallpaper remained unchanged. The temporary comparison window and private captures were removed; the user's windows were preserved.
 
@@ -299,6 +311,31 @@ The **14 still wallpapers** consist of **10 third-party downloads and 4 project-
 | 2 FLUX-generated horror scenes | 13–14 and their comparison preview | Project contribution dedicated under [CC0 only to the extent applicable rights exist](ARTWORK-LICENSE), without a promise of exclusivity or copyright protection |
 | 10 downloaded photographs | 01–10 and their thumbnails | Their individual source licenses and attribution in [SOURCES.md](SOURCES.md); **not relicensed by the project** |
 
-Configuration, tools and documentation use [MIT](LICENSE). The two optional videos are **owner-supplied Grok animations of scene 13**, not additional independently created still wallpapers. **Created with Grok**; their provenance and links to the provider's output guidance and attribution requirements are in [SOURCES.md](SOURCES.md#optional-animated-wallpaper). No blanket MIT or CC0 license is asserted for the supplied animations themselves. The qualified dedication of the underlying still is unchanged. Contact sheets are presentations of existing works, not additional wallpapers or waivers of the depicted works' rights. Installing the theme does not run generators or require their dependencies.
+**Configuration, tools and documentation use [MIT](LICENSE).** The root `LICENSE` contains only the standard MIT text so automated services can recognize it. The repository's media are separately licensed; the MIT label does **not** relicense third-party photographs or their thumbnails.
 
-Required attribution, license links and the dedication of the four project-created works are also included in **`LICENSE`**, so they accompany the wallpapers even if a selective installer does not copy `SOURCES.md` or `ARTWORK-LICENSE`.
+The owner's contributions to the **three optional animation derivatives** are licensed under **[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)**, to the extent applicable rights exist, without a promise of exclusivity or copyright protection. Credit **PuroDelphi**, retain the documented generation credits, link the license and indicate modifications. The two corridor clips were **Created with Grok**; the glass clip's generation tool was not specified. The underlying stills retain their qualified CC0 dedication. No third-party rights or provider conditions are waived. Contact sheets are presentations of existing works, not additional wallpapers or waivers of the depicted works' rights. Installing the theme does not run generators or require their dependencies.
+
+Mandatory wallpaper attribution, license links and the dedication of the four project-created works are bundled below so they accompany the wallpapers even if a selective installer copies only `README.md` and `LICENSE`, not `SOURCES.md` or `ARTWORK-LICENSE`.
+
+### Bundled wallpaper notices
+
+The downloaded photograph originals are distributed **without modifications**. Contact-sheet thumbnails are reduced and labelled; each retains its source license. No author or source endorses this theme.
+
+| File | Work / author or source credit | Source | License |
+| --- | --- | --- | --- |
+| `01-jack-o-lantern.jpg` | Halloween lanterns — CC0-Photographers / PxHere; individual author unidentified | [PxHere 783593](https://pxhere.com/en/photo/783593) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| `02-pumpkin-row.jpg` | Row of carved pumpkins — CC0-Photographers / PxHere; individual author unidentified | [PxHere 1392093](https://pxhere.com/en/photo/1392093) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| `03-candlelit-grin.jpg` | Illuminated pumpkin — CC0-Photographers / PxHere; individual author unidentified | [PxHere 334524](https://pxhere.com/en/photo/334524) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| `04-pumpkin-and-lantern.jpg` | Pumpkin and lantern — CC0-Photographers / PxHere; individual author unidentified | [PxHere 774668](https://pxhere.com/en/photo/774668) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| `05-pumpkin-and-spider.jpg` | Pumpkin and spider on wood — Dorothe / PxHere | [PxHere 1453995](https://pxhere.com/en/photo/1453995) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| `06-graveyard-of-lights.jpg` | *Halloween lights and decorations at night along Seven Oaks Lane, Ewing Township, New Jersey, 2023-10-01* — [Famartin](https://commons.wikimedia.org/wiki/User:Famartin) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:2023-10-01_21_08_14_Halloween_lights_and_decorations_at_night_along_Seven_Oaks_Lane_in_the_Mountainview_section_of_Ewing_Township,_Mercer_County,_New_Jersey.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| `07-purple-ghosts.jpg` | *Halloween lights and decorations at night along Windybush Way, Ewing Township, New Jersey, 2023-10-27* — [Famartin](https://commons.wikimedia.org/wiki/User:Famartin) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:2023-10-27_20_05_48_Halloween_lights_and_decorations_at_night_along_Windybush_Way_in_the_Mountainview_section_of_Ewing_Township,_Mercer_County,_New_Jersey.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| `08-halloween-at-tivoli.jpg` | *Copenhagen 2014-10-24 — Halloween i Tivoli* — [Guillaume Baviere](https://www.flickr.com/people/84554176@N00) | [Flickr](https://www.flickr.com/photos/84554176@N00/15526730307/) | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) |
+| `09-red-eyed-skull.jpg` | Decorative Halloween skull — unidentified individual author / PxHere | [PxHere 784164](https://pxhere.com/en/photo/784164) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| `10-ghost-circle.jpg` | *Ghostly Circle (2005-10-22)* — [Kate Mereand-Sinha](https://www.flickr.com/people/61404403@N00) | [Flickr](https://www.flickr.com/photos/katmere/57310994/) | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) |
+
+`CC0-Photographers` is a source profile name, not a verified individual author. CC BY requires credit, a license link and notice of changes. CC BY-SA additionally requires distributed adaptations to use the applicable ShareAlike terms. No additional restrictions are imposed on these licensed photographs.
+
+**Project-created artwork dedication:** the two vector illustrations (11–12), their SVG sources and vector previews are dedicated under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode). The project's contribution to the two fictional FLUX-generated stills (13–14) and their comparison preview has the same dedication only to the extent applicable rights exist, without a promise of exclusivity, copyright protection or warranty. This does not cover the downloaded photographs or optional animation contributions licensed separately above.
+
+**Desktop screenshots:** the capture contribution in `preview.png`, `previews/halloween.webp` and `previews/desktop-mansion.png` is MIT. Depicted software and wallpaper artwork retain their own rights. The first two show AI-generated still 14; the mansion capture shows vector still 12. A screenshot or combined contact sheet does not waive the depicted works' rights.

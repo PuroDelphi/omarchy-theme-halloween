@@ -73,7 +73,10 @@
   "sha256": "ef4037f5402f60cebfdc91f28ac0619009bde0b66afa1463379c0bd26b216b1b",
   "created_at_utc": "2026-10-19T01:49:05.671633+00:00",
   "changes": "Encoded the supplied H.264 video as VP9 without resizing, cropping, retiming, interpolation, added transitions or upscaling. Omitted audio, attached cover art and source container metadata; the original MP4 remains unchanged. All fourteen still wallpapers remain unchanged.",
-  "output_rights": "Owner-authorized publication of a Grok-generated animation. Grok's public output guidance states users own their outputs and may use them commercially. Retain the Created with Grok credit; no provider endorsement is implied. No blanket MIT or CC0 license is asserted for the supplied animation itself. The qualified CC0 dedication of the underlying still and only the project's own encoding contribution does not waive third-party rights or provider conditions.",
+  "output_rights": "The repository owner's contribution to this animation is licensed under CC BY 4.0, only to the extent applicable rights exist. Credit PuroDelphi, retain Created with Grok, link the license and identify modifications. No exclusivity or copyright protection is guaranteed; third-party rights and provider conditions are not waived. The underlying still retains its qualified CC0 dedication.",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "license_legalcode": "https://creativecommons.org/licenses/by/4.0/legalcode",
   "provider_references": {
     "output_guidance": "https://x.ai/legal/faq#who-owns-the-inputs-to-and-outputs-from-grok",
     "consumer_terms": "https://x.ai/legal/terms-of-service#4-user-content",
