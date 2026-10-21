@@ -17,7 +17,6 @@ Updated real desktop capture on **edge** with the **vivid ANSI palette**, unchan
 | Aubergine | `#251D2D` | Raised surfaces |
 | Pumpkin | `#FF9A3C` | Unchanged bar text, accent, focus, actions and normal ANSI yellow |
 | Border amethyst | `#BB9AF7` | Unchanged active-border endpoint |
-| Spell purple | `#B06BF5` | Semantic purple and Foot's normal ANSI magenta slot |
 | Ivory | `#F5E9D3` | Main text |
 | Bone | `#FFF4DF` | Bright text and generated cursor |
 | Gray lavender | `#9B8DA8` | Muted text |
@@ -44,7 +43,7 @@ Contrast ratios calculated using sRGB relative luminance (WCAG): text/background
 The repository root is the theme root, without an additional enclosing directory:
 
 ```text
-omarchy-theme-halloween/
+omarchy-theme-halloween-theme/
 ├── colors.toml              # Semantic palette
 ├── icons.theme              # Yaru
 ├── shell.bar.toml           # Pumpkin-orange bar text; native contrast behavior retained
@@ -53,8 +52,7 @@ omarchy-theme-halloween/
 ├── artwork/                 # SVG sources for the original vector illustrations
 ├── preview.png              # Real desktop screenshot, 16:9
 ├── previews/                # Second screenshot, WebP, artwork and contact sheets
-├── tools/                   # Regeneration of the two vector illustrations
-├── LICENSE                  # MIT: configuration, tools and documentation
+├── LICENSE                  # MIT: configuration and documentation
 ├── ARTWORK-LICENSE          # CC0 dedication: four project-created works and listed derivatives
 ├── SOURCES.md               # Author, source and license for each download
 ├── sources/                 # Provenance metadata
@@ -89,21 +87,11 @@ They were generated using the [official public Black Forest Labs Space](https://
 
 Apache-2.0 licenses the **model**; it is not presented as a guarantee of exclusive rights over its outputs. The project's contribution to these images is dedicated under CC0 to the extent rights exist; see `ARTWORK-LICENSE`.
 
-### Regenerating the vector illustrations
+### Editable vector sources
 
-The PNGs are already included; this is only for artwork development. It requires **Python 3** and **`rsvg-convert`**, from Arch's `librsvg` package. No network access or additional Python packages are needed.
+The original SVGs for **11 and 12** remain in `artwork/`, alongside their existing **3840 × 2160** PNG exports in `backgrounds/`. They can be edited with an SVG-capable illustration tool. Their artistic previews and all four project-created stills remain unchanged.
 
-```bash
-python tools/render-wallpapers.py
-```
-
-The command regenerates only the two **vector originals, 11 and 12**: their SVG sources, 3840 × 2160 PNGs and artistic previews in `previews/`. **It does not overwrite `preview.png`, the real screenshots or wallpapers 13 and 14.** It does not download, replace or delete the ten photographs. To generate a scene at another resolution in a separate directory:
-
-```bash
-python tools/render-wallpapers.py --scene 11 --width 1920 --height 1080 --output-dir /tmp/halloween-art
-```
-
-`--sources-only` generates only the sources; `--help` describes the options. Keep the two original 4K PNGs when distributing the theme. The desktop crops the image to fill each monitor, so other aspect ratios may hide details near the edges.
+The executable development renderer is no longer part of the installable theme, eliminating `NON_THEME_PAYLOAD`. Its MIT-licensed source remains available in [the project history](https://github.com/PuroDelphi/omarchy-theme-halloween-theme/blob/b5ba2e7fd00ab0b6e7f209ffd90805a2634f931c/tools/render-wallpapers.py). Installing or using the theme requires no generator dependencies.
 
 ## Local installation
 
@@ -128,7 +116,7 @@ To switch back, consult `omarchy theme list` and apply your previous theme's nam
 ## Installation from GitHub
 
 ```bash
-omarchy theme install https://github.com/PuroDelphi/omarchy-theme-halloween
+omarchy theme install https://github.com/PuroDelphi/omarchy-theme-halloween-theme
 ```
 
 This command downloads **and applies** the theme. To select it again:
@@ -137,7 +125,7 @@ This command downloads **and applies** the theme. To select it again:
 omarchy theme set theme-halloween
 ```
 
-The requested repository is named `omarchy-theme-halloween`: Omarchy removes the `omarchy-` prefix, so its installed identifier is **`theme-halloween`**, not `halloween`. The owner's chosen repository name is retained, although it differs from the recommended `omarchy-[name]-theme` convention.
+The repository follows the recommended `omarchy-<name>-theme` convention. Omarchy strips the `omarchy-` prefix and `-theme` suffix, retaining the installed identifier **`theme-halloween`**. Existing theme and user-background folders therefore keep the same name.
 
 ## Optional animated edition
 
@@ -168,7 +156,7 @@ clip="dont-look-at-the-glass.webm"
 video="$HOME/.config/omarchy/backgrounds/theme-halloween/$clip"
 mkdir -p "$HOME/.config/omarchy/backgrounds/theme-halloween" &&
   curl --fail --location --output "$video" \
-    "https://raw.githubusercontent.com/PuroDelphi/omarchy-theme-halloween/main/optional/$clip" &&
+    "https://raw.githubusercontent.com/PuroDelphi/omarchy-theme-halloween-theme/main/optional/$clip" &&
   omarchy theme bg set "$video"
 ```
 
@@ -218,7 +206,7 @@ Source hashes, export commands and artwork rights are documented in [`sources/op
 
 ## Distribution and approval
 
-1. Distribution repository: **[PuroDelphi/omarchy-theme-halloween](https://github.com/PuroDelphi/omarchy-theme-halloween)**. Its root directly contains the palette and `backgrounds/`.
+1. Distribution repository: **[PuroDelphi/omarchy-theme-halloween-theme](https://github.com/PuroDelphi/omarchy-theme-halloween-theme)**. Its root directly contains the palette and `backgrounds/`.
 2. Check installation from that URL using **Install → Style → Theme** or the command above. The resulting identifier should be `theme-halloween`.
 3. `preview.png` contains a real screenshot with a terminal and Neovim; `previews/desktop-mansion.png` shows a second scene. They were reviewed before publication to exclude private windows, usernames, notifications and the mouse pointer.
 4. Website catalog submission: **[omacom/omarchy-site#586](https://github.com/omacom/omarchy-site/pull/586)**, with the required WebP screenshot and alphabetical entry.
@@ -233,13 +221,13 @@ The theme uses the semantic format of the reference installation, **Omarchy 4.0.
 - **Marketplace registry:** [submission #141](https://github.com/omacom/omarchy-theme-registry/issues/141), created through the official form with the `submission` label. The [latest remote bot recheck on 2026-10-21](https://github.com/omacom/omarchy-theme-registry/issues/141#issuecomment-6320010952) **passed validation**, confirmed the license warning was removed, and retained four non-blocking advisories described below. GitHub recognizes the root software license as **MIT**. The bot-created [registry PR #142](https://github.com/omacom/omarchy-theme-registry/pull/142) has `submission` and `auto-approve` labels, not maintainer approval: it still needs to be merged before publication. The earlier unlabelled [submission #128](https://github.com/omacom/omarchy-theme-registry/issues/128) was closed as superseded, with a link to the replacement.
 - Both submissions describe the theme's included content. Follow their links for the maintainers' current decisions; submission does not imply immediate catalog listing.
 
-### Registry warning decisions
+### Registry warning corrections
 
-- **`REPO_NO_LICENSE`:** `LICENSE` now contains the exact standard MIT text. Artwork notices live in this README and `ARTWORK-LICENSE`, with explicit CC BY 4.0 grants for the owner's animation contributions and the existing source licenses preserved for photographs.
-- **`REPO_NAME_CONVENTION`:** retain the owner's requested repository URL and the validated install slug `theme-halloween`; this is an advisory, not a reason to rename the repository.
-- **`PALETTE_UNKNOWN_KEYS`:** the registry flags four keys, but the installed edge templates consume `selection_background` and `selection_foreground`, and the native color loader supports `purple` / `bright_purple` aliases. Keep these compatibility keys rather than changing selection colors or application output merely to silence that registry schema warning.
-- **`BACKGROUNDS_LARGE`:** keep the 26.31 MiB still collection at its original quality. The advisory does not justify recompressing the licensed originals or the project's 4K vector illustrations.
-- **`NON_THEME_PAYLOAD`:** keep the optional vector renderer for artwork development. A selective marketplace install excludes it; installing the theme does not execute it.
+- **`REPO_NO_LICENSE`:** `LICENSE` contains the exact standard MIT text recognized by GitHub. Artwork notices remain in README and `ARTWORK-LICENSE`, including CC BY 4.0 grants for the owner's animation contributions and the unchanged source licenses for photographs.
+- **`REPO_NAME_CONVENTION`:** the approved repository name is now `omarchy-theme-halloween-theme`; the validated install slug remains `theme-halloween`.
+- **`PALETTE_UNKNOWN_KEYS`:** removed `selection_background`, `selection_foreground`, `purple` and `bright_purple`. Omarchy derives selection colors from `selection` / `bright_foreground` and legacy purple aliases from the existing magenta values.
+- **`BACKGROUNDS_LARGE`:** re-encoded only the largest CC0 photograph, **05 — Pumpkin and Spider**, as WebP quality **82**, retaining **4961 × 3508** pixels. The collection is now **20.37 MiB**, below 25 MiB. The other thirteen stills, including all four project-created wallpapers, remain byte-identical.
+- **`NON_THEME_PAYLOAD`:** removed the executable renderer from the current theme tree. Editable SVG artwork remains included; the former renderer is available only through project history.
 
 ### Website catalog: specific requirements
 
@@ -247,7 +235,7 @@ According to the site's [“Adding your theme” instructions](https://github.co
 
 - A **real 16:9 screenshot** showing a terminal, editor and a theme wallpaper, without a cursor, notifications or private information. An illustration or empty desktop is not a substitute.
 - That screenshot converted to WebP at `assets/themes/halloween.webp`, targeting **1200 × 675** and approximately **under 100 KB**, without upscaling a small screenshot.
-- A `<figure class="themes__theme">` block in **`themes/index.html`**, in alphabetical order. Both image and title must link to `https://github.com/PuroDelphi/omarchy-theme-halloween`.
+- A `<figure class="themes__theme">` block in **`themes/index.html`**, in alphabetical order. Both image and title must link to `https://github.com/PuroDelphi/omarchy-theme-halloween-theme`.
 
 The site generates its data from that HTML: do not edit `src/data/themes.json` as the submission source. A PR without a screenshot cannot be merged. `previews/halloween.webp` is the refreshed real screenshot prepared for this submission: **1200 × 675, quality 80, 50,808 bytes**. The separate artistic preview must not be confused with the screenshot.
 
@@ -290,8 +278,10 @@ Initial validation environment: **stable Omarchy 4.0.5-1**, as reported by the i
 - Earlier local runs of the official registry's `validateTheme` implementation passed with zero errors and advisories for the repository name, palette schema, still-collection size and optional renderer. Optional clips remain outside `backgrounds/`. See [community submissions](#community-submissions) for the actual remote report; local checks are not maintainer approval.
 - Bar-only orange override: installed through the real Omarchy installer in an isolated HOME, confirming orange bar text with unchanged application, popup and control colors. Applied to the live desktop without changing the wallpaper or `shell.json`; the clock and monochrome icons were visually checked with transparency enabled. The native contrast helper kept orange for 13 of the 14 supplied wallpapers at a 1920 × 1080 top-bar sample and chose dark text for **The Last Corridor**, consistent with the retained automatic behavior.
 - Vivid ANSI revision on **edge**: ran the real Omarchy template generator in an isolated HOME and passed `foot --check-config`. Applied the palette with `omarchy theme refresh` and visually inspected native ANSI output in a real Alacritty window: normal yellow is **`#FF9A3C`**, bright yellow is **`#FFB05C`**, and the other colored accents are stronger rather than near-white pastels. The revised colored accents have at least **5.64:1** contrast against the solid `#121016` background. The bar section, global `shell.json` and selected wallpaper remained unchanged. The temporary comparison window and private captures were removed; the user's windows were preserved.
+- Registry-warning cleanup: native template generation in isolated homes produced **20 configurations** before and after removing the four extra palette keys. **19 were byte-identical**; Foot's normal ANSI magenta changed from the former `purple` override to the shared canonical `magenta` value, **`#E96AA9`**. `foot --check-config` passed. Selection colors, orange ANSI yellow, bar text and all other generated settings were preserved.
+- Compression review: photograph 05 was decoded at its original **4961 × 3508** dimensions and compared visually before/after at full-scene and native-pixel scale. Only that CC0 photograph was re-encoded as WebP; the other thirteen wallpapers, all three optional videos and existing previews retain their bytes.
 
-The wallpapers total **26.31 MiB**. Originals are retained without additional compression: this slightly exceeds the registry's advisory 25 MiB warning threshold, but every image meets its hard limits of 50 MB and 40 megapixels. A community submission does not imply acceptance or bundling by default.
+The fourteen wallpapers total **20.37 MiB**, below the registry's advisory 25 MiB threshold. Only photograph 05 was re-encoded, without resizing; the other thirteen files retain their original bytes. Every image remains within the hard limits of 50 MB and 40 megapixels. A community submission does not imply acceptance or bundling by default.
 
 ## Primary sources
 
@@ -319,7 +309,7 @@ Mandatory wallpaper attribution, license links and the dedication of the four pr
 
 ### Bundled wallpaper notices
 
-The downloaded photograph originals are distributed **without modifications**. Contact-sheet thumbnails are reduced and labelled; each retains its source license. No author or source endorses this theme.
+Nine downloaded photographs are distributed **without modifications**; photograph **05** is re-encoded as WebP quality **82** at its original dimensions, with metadata stripped. Contact-sheet thumbnails are reduced and labelled; each retains its source license. No author or source endorses this theme.
 
 | File | Work / author or source credit | Source | License |
 | --- | --- | --- | --- |
@@ -327,7 +317,7 @@ The downloaded photograph originals are distributed **without modifications**. C
 | `02-pumpkin-row.jpg` | Row of carved pumpkins — CC0-Photographers / PxHere; individual author unidentified | [PxHere 1392093](https://pxhere.com/en/photo/1392093) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
 | `03-candlelit-grin.jpg` | Illuminated pumpkin — CC0-Photographers / PxHere; individual author unidentified | [PxHere 334524](https://pxhere.com/en/photo/334524) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
 | `04-pumpkin-and-lantern.jpg` | Pumpkin and lantern — CC0-Photographers / PxHere; individual author unidentified | [PxHere 774668](https://pxhere.com/en/photo/774668) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
-| `05-pumpkin-and-spider.jpg` | Pumpkin and spider on wood — Dorothe / PxHere | [PxHere 1453995](https://pxhere.com/en/photo/1453995) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| `05-pumpkin-and-spider.webp` | Pumpkin and spider on wood — Dorothe / PxHere; re-encoded as WebP without resizing | [PxHere 1453995](https://pxhere.com/en/photo/1453995) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
 | `06-graveyard-of-lights.jpg` | *Halloween lights and decorations at night along Seven Oaks Lane, Ewing Township, New Jersey, 2023-10-01* — [Famartin](https://commons.wikimedia.org/wiki/User:Famartin) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:2023-10-01_21_08_14_Halloween_lights_and_decorations_at_night_along_Seven_Oaks_Lane_in_the_Mountainview_section_of_Ewing_Township,_Mercer_County,_New_Jersey.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | `07-purple-ghosts.jpg` | *Halloween lights and decorations at night along Windybush Way, Ewing Township, New Jersey, 2023-10-27* — [Famartin](https://commons.wikimedia.org/wiki/User:Famartin) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:2023-10-27_20_05_48_Halloween_lights_and_decorations_at_night_along_Windybush_Way_in_the_Mountainview_section_of_Ewing_Township,_Mercer_County,_New_Jersey.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | `08-halloween-at-tivoli.jpg` | *Copenhagen 2014-10-24 — Halloween i Tivoli* — [Guillaume Baviere](https://www.flickr.com/people/84554176@N00) | [Flickr](https://www.flickr.com/photos/84554176@N00/15526730307/) | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) |

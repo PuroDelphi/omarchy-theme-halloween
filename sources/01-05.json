@@ -68,7 +68,7 @@
     "source_license_url": "https://pxhere.com/en/license"
   },
   {
-    "filename": "backgrounds/05-pumpkin-and-spider.jpg",
+    "filename": "backgrounds/05-pumpkin-and-spider.webp",
     "title": "Free Images : background image, wood, room, face, illuminated, light, decoration, orange, glowing, october, greeting card, halloween pumpkin, spider, season, postcard, mood, atmosphere, creepy, shine, spooky, ghostly, calabaza, cucurbita, jack o lantern, carving, lighting, darkness, winter squash, heat, computer wallpaper 4961x3508",
     "creator": "Dorothe",
     "creator_url": "https://pxhere.com/en/photographer/901221",
@@ -78,10 +78,20 @@
     "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
     "width": 4961,
     "height": 3508,
-    "changes": "Unmodified; the desktop may crop the image when displaying it.",
+    "changes": "Re-encoded from JPEG as WebP quality 82, with metadata stripped. Original 4961x3508 dimensions retained; no resizing, cropping or retouching. CC0 source rights and attribution are unchanged.",
     "credit": "Dorothe / PxHere",
     "license_notice": "The image is released free of copyrights under Creative Commons CC0. Attribution is not required.",
     "attribution_required": false,
-    "source_license_url": "https://pxhere.com/en/license"
+    "source_license_url": "https://pxhere.com/en/license",
+    "source_filename": "05-pumpkin-and-spider.jpg",
+    "source_sha256": "5f8819f7bf7c2cabb75ddd6ed6c8c5693add3dbd05b8e378e8681d0060adf961",
+    "sha256": "d1310f31c6906218d50a097e531cc094af0e826eb3cfb6327768d677dd5a0ca9",
+    "bytes": 663618,
+    "encoding": {
+      "format": "WebP",
+      "quality": 82,
+      "metadata": "stripped",
+      "resized": false
+    }
   }
 ]

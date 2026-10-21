@@ -37,8 +37,9 @@ This dedication does NOT cover the ten downloaded third-party wallpapers,
 their photographs, the combined previews/contact-sheet.png or the real
 screenshots preview.png, previews/halloween.webp and previews/desktop-mansion.png.
 See SOURCES.md for the provenance and terms of those external resources.
-The code in tools/render-wallpapers.py remains under the repository's MIT
-license (LICENSE); this dedication applies to the identified artwork.
+The archived vector renderer remains under the repository's MIT license;
+it is no longer shipped in the installable theme. This dedication applies
+only to the identified artwork.
 
 PROVENANCE AND ATTRIBUTION
 11/12: Midnight Pumpkin Harvest and Raven Manor, original vector
