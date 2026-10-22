@@ -8,6 +8,24 @@ Updated real desktop capture on **edge** with the **vivid ANSI palette**, unchan
 
 The capture predates the final registry cleanup: the four extra palette keys are no longer distributed, and Foot's normal ANSI magenta now uses the shared **`#E96AA9`** value. The shown wallpaper, orange bar and other generated colors are unchanged.
 
+## Halloween login / disk-unlock image
+
+![Halloween login / disk-unlock preview: orange jack-o-lantern and Omarchy lettering with amethyst bats on a near-black background](preview-unlock.png)
+
+The theme includes **[`unlock.png`](unlock.png)**: an original **1000 × 260 transparent PNG** with a carved pumpkin, orange Omarchy lettering and amethyst bats. Its editable source is [`artwork/unlock.svg`](artwork/unlock.svg). This is a separate login asset, not a fifteenth wallpaper; the palette and all fourteen wallpapers are unchanged.
+
+**Select it separately after installing the theme:** open **Style → Unlock** and choose **theme-halloween**, or run:
+
+```bash
+omarchy plymouth set-by-theme theme-halloween
+```
+
+On Omarchy builds with this native integration, the command applies the logo and the theme's background/text colors to **Plymouth disk unlock and SDDM login**, and requests privilege elevation. Installing or selecting the desktop theme alone does **not** apply it. The running session's **Quickshell lock screen is separate** and does not display this logo. Older builds without this integration need an Omarchy update; no custom SDDM theme, script or system-file edit is shipped here.
+
+`preview-unlock.png` is a **1920 × 1080 preview rendered by `omarchy plymouth preview`**, not a photograph or a live login screenshot. It is used by the native Unlock picker and shown above; the existing real-desktop `preview.png` remains the marketplace/gallery cover.
+
+The original logo and SVG source are dedicated under **[CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)**. No font file is distributed; SVG lettering uses system DejaVu Sans and is rasterized in the ready-to-use PNG. The preview contains Omarchy's own password-field and lock graphics, whose existing rights are not waived.
+
 ## Design and colors
 
 `colors.toml` is the source of truth for the application palette. Omarchy generates configurations for terminals, Hyprland, Neovim, Helix, btop, browsers, editors and the shell from its templates. `shell.bar.toml` overrides only the bar's text color; the other shell surfaces keep their generated colors. Installed applications and local templates determine which integrations apply.
@@ -49,6 +67,8 @@ omarchy-theme-halloween-theme/
 ├── colors.toml              # Semantic palette
 ├── icons.theme              # Yaru
 ├── shell.bar.toml           # Pumpkin-orange bar text; native contrast behavior retained
+├── unlock.png               # Transparent Halloween logo for Plymouth / SDDM
+├── preview-unlock.png       # Native Unlock-picker preview, 1920 × 1080
 ├── backgrounds/             # 10 downloads + 2 4K vector illustrations + 2 2K AI images
 ├── optional/                # Opt-in animated wallpaper; excluded from the default set
 ├── artwork/                 # SVG sources for the original vector illustrations
@@ -249,6 +269,12 @@ The registry requires the palette and wallpapers at the theme root and a 16:9 `p
 
 The registry may assign a different identifier if the name is already taken. Installation by name/validated commit belongs to that system; the verified local installation uses the **full Git URL**, without assuming `omarchy theme install halloween` is available.
 
+### Updating an existing submission
+
+The [registry's update policy](https://github.com/omacom/omarchy-theme-registry#submit-your-theme) follows the theme repository's **default branch**, refreshing listed themes **every six hours**. Push updates here; **do not submit a duplicate issue or hand-edit the bot's registry PR**. While submission #141 / PR #142 is still pending, comment **`/recheck` on issue #141** to validate the latest content and regenerate that same PR. A maintainer must still merge it before first publication.
+
+`unlock.png` and `preview-unlock.png` are explicitly included in the registry's installable file list. The SVG source remains available in this repository; marketplace users receive the ready-to-use PNGs and the README's license notice. For the separate website gallery PR #586, keep its real desktop screenshot and alphabetical entry; the login artwork does not replace the required desktop screenshot.
+
 ### Bundling by default
 
 Bundled themes are in `themes/` in the [Omarchy project](https://github.com/omacom/omarchy). No specific policy was found guaranteeing acceptance of a new theme into that collection. The project directs suggestions to [Discussions](https://github.com/omacom/omarchy/discussions), rather than bug issues. Publication and community catalogs do not imply inclusion in the distribution.
@@ -260,6 +286,8 @@ In the version consulted, a theme cloned with `omarchy theme install` cannot sup
 ## Verification performed
 
 Initial validation environment: **stable Omarchy 4.0.5-1**, as reported by the installed package. The initial collection was tested in a real graphical session; the expansion to 14 wallpapers was additionally checked with an isolated installation. The current primary preview and vivid ANSI revision were captured and checked on **edge, Omarchy 4.0.0.r7080.g60f5b49-1**.
+
+**Login-image update (2026-10-21):** rendered the transparent PNG from its SVG and decoded both PNGs; `unlock.png` is **1000 × 260 / 42,935 bytes** with transparent and opaque pixels, and `preview-unlock.png` is **1920 × 1080 / 93,072 bytes**. Ran the actual `omarchy plymouth preview` renderer and visually inspected its output. Launched **`sddm-greeter-qt6 --test-mode`** with an isolated copy of Omarchy's SDDM theme and the new logo, then visually inspected the real 1366 × 768 greeter: the logo loaded without clipping. That test retained the default SDDM background/control colors; it was not a privileged theme application or a login/authentication test. An isolated-HOME native `omarchy theme set theme-halloween` exited **0**, staged both login PNGs and the unchanged palette/bar override byte-identically, kept **14** default wallpapers, and made the theme discoverable by `omarchy plymouth list`. Local README links resolved. Temporary preview windows and test files were removed; installed Plymouth/SDDM files, the active desktop and the selected wallpaper were not changed.
 
 - Full decoding of all **14 wallpapers**, dimension checks and absence of binary duplicates: passed.
 - **10 downloads** at their source resolution, between 3264 and 6000 pixels wide; **2 vector illustrations** at 3840 × 2160 and **2 AI-generated horror images** at native 2048 × 1152, without upscaling. The last two images' hashes match the generation record.
@@ -305,6 +333,8 @@ The **14 still wallpapers** consist of **10 third-party downloads and 4 project-
 | 10 downloaded photographs | 01–10 and their thumbnails | Their individual source licenses and attribution in [SOURCES.md](SOURCES.md); **not relicensed by the project** |
 
 **Configuration, tools and documentation use [MIT](LICENSE).** The root `LICENSE` contains only the standard MIT text so automated services can recognize it. The repository's media are separately licensed; the MIT label does **not** relicense third-party photographs or their thumbnails.
+
+**Login artwork:** `unlock.png` and `artwork/unlock.svg` are original procedural vector artwork dedicated under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode). The capture/composition contribution in `preview-unlock.png` is MIT; depicted Omarchy UI assets retain their existing rights. These files are separate from the fourteen wallpapers.
 
 The owner's contributions to the **three optional animation derivatives** are licensed under **[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)**, to the extent applicable rights exist, without a promise of exclusivity or copyright protection. Credit **PuroDelphi**, retain the documented generation credits, link the license and indicate modifications. The two corridor clips were **Created with Grok**; the glass clip's generation tool was not specified. The underlying stills retain their qualified CC0 dedication. No third-party rights or provider conditions are waived. Contact sheets are presentations of existing works, not additional wallpapers or waivers of the depicted works' rights. Installing the theme does not run generators or require their dependencies.
 

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="260" viewBox="0 0 1000 260">
+  <title>Halloween for Omarchy — unlock artwork</title>
+  <desc>Original transparent pumpkin-orange wordmark with a carved jack-o-lantern, amethyst shadows and bats. CC0 1.0.</desc>
+  <defs>
+    <linearGradient id="pumpkin" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFB05C"/>
+      <stop offset="1" stop-color="#FF9A3C"/>
+    </linearGradient>
+    <linearGradient id="letters" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFF4DF"/>
+      <stop offset="0.28" stop-color="#FFB05C"/>
+      <stop offset="1" stop-color="#FF9A3C"/>
+    </linearGradient>
+  </defs>
+  <!-- All shapes are original; lettering uses the system DejaVu Sans font. -->
+  <g transform="translate(12 10)">
+    <path d="M99 56 Q91 23 113 11 L127 19 Q108 35 115 57Z" fill="#A8CF40"/>
+    <path d="M116 48 Q144 22 165 40 Q144 58 116 48Z" fill="#A8CF40"/>
+    <path d="M107 57 C38 26 5 93 25 153 C40 208 83 222 111 209 C146 224 190 204 203 151 C219 84 177 29 118 58Z" fill="#4B2E53" transform="translate(0 8)"/>
+    <path d="M107 57 C38 26 5 93 25 153 C40 208 83 222 111 209 C146 224 190 204 203 151 C219 84 177 29 118 58Z" fill="url(#pumpkin)"/>
+    <g fill="none" stroke="#B88565" stroke-width="3" opacity="0.65">
+      <path d="M91 62 C53 93 60 168 91 201"/>
+      <path d="M130 62 C169 95 159 174 130 202"/>
+    </g>
+    <g fill="#121016">
+      <path d="M48 120 L83 91 L89 125Z"/>
+      <path d="M133 125 L140 91 L175 120Z"/>
+      <path d="M111 123 L99 143 L123 143Z"/>
+      <path d="M48 149 L74 162 L84 152 L99 170 L120 170 L137 152 L146 162 L176 148 L159 180 L138 194 L87 194 L65 179Z"/>
+    </g>
+    <g fill="#FFF4DF">
+      <path d="M57 117 L79 99 L82 119Z"/>
+      <path d="M141 119 L145 99 L166 116Z"/>
+    </g>
+  </g>
+  <g font-family="DejaVu Sans, sans-serif" font-weight="900" font-size="128" letter-spacing="-6">
+    <text x="244" y="164" fill="#4B2E53">OMARCHY</text>
+    <text x="238" y="157" fill="url(#letters)">OMARCHY</text>
+  </g>
+  <path d="M248 183 H422 M722 183 H916" stroke="#BB9AF7" stroke-width="2"/>
+  <text x="451" y="190" fill="#BB9AF7" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="600" letter-spacing="5">HALLOWEEN</text>
+  <g fill="#BB9AF7">
+    <path d="M859 31 L876 40 L882 33 L888 40 L906 31 L900 47 L890 46 L882 55 L874 46 L864 47Z"/>
+    <path d="M928 65 L939 71 L943 66 L948 71 L960 65 L956 77 L949 76 L943 82 L937 76 L931 77Z"/>
+  </g>
+</svg>

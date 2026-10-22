@@ -6,8 +6,10 @@ SPDX-License-Identifier: CC0-1.0
 This dedication identifies FOUR project-created still wallpapers:
 - 11/12: two procedural vector illustrations.
 - 13/14: two fictional FLUX-generated horror scenes.
-The listed source files, previews and three optional videos are derivatives
-or presentations of those four works, not additional independent wallpapers.
+It also covers the separate original login logo, unlock.png and its
+editable artwork/unlock.svg source. This logo is not another wallpaper.
+The listed wallpaper source files, previews and three optional videos are
+derivatives or presentations of the four stills, not independent wallpapers.
 
 To the extent permitted by law, the authors dedicate the copyright and
 related rights in the works and derivatives identified below to the public
@@ -32,6 +34,8 @@ EXCLUSIVE SCOPE
 - backgrounds/13-the-last-corridor.webp
 - backgrounds/14-dont-look-at-the-glass.webp
 - previews/horror-contact-sheet.jpg
+- unlock.png
+- artwork/unlock.svg
 
 This dedication does NOT cover the ten downloaded third-party wallpapers,
 their photographs, the combined previews/contact-sheet.png or the real
@@ -46,6 +50,12 @@ PROVENANCE AND ATTRIBUTION
 illustrations created for the theme in 2026, without photographs or external
 assets. Their contact sheets use the system sans-serif font for labels;
 no font files are redistributed.
+
+Login logo: original procedural jack-o-lantern, orange wordmark and bats.
+Lettering uses the system DejaVu Sans font; no font file is redistributed.
+preview-unlock.png is a native Omarchy Plymouth preview composition, not
+part of this CC0 dedication: its composition contribution is MIT and the
+depicted Omarchy password-field / lock assets retain their existing rights.
 
 13/14: The Last Corridor and Don't Look at the Glass, fictional scenes
 generated with FLUX.1 [schnell] through the official public Black Forest Labs
